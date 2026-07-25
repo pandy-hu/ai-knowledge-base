@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>副业红线检查器</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--line:#e5e7eb;--txt:#1f2328;--mut:#6b7280;--acc:#2563eb;--red:#dc2626;--amb:#b45309;--grn:#15803d;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);font-size:16px;line-height:1.6;padding:16px;}
+h1{font-size:21px;margin:4px 0 2px;}
+.sub{color:var(--mut);font-size:13px;margin-bottom:14px;}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px;}
+textarea{width:100%;min-height:96px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;outline:none;resize:vertical;background:#fff;}
+textarea:focus{border-color:var(--acc);}
+.btn{display:block;width:100%;margin-top:12px;padding:14px;border:none;border-radius:12px;background:var(--acc);color:#fff;font-size:17px;font-weight:600;cursor:pointer;}
+.btn:active{opacity:.85;}
+.sec-title{font-size:15px;font-weight:600;margin:14px 0 8px;}
+.q{margin-bottom:10px;}
+.q .lab{font-size:14px;margin-bottom:6px;}
+.opts{display:flex;gap:8px;}
+.opts button{flex:1;padding:10px 0;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--mut);font-size:14px;cursor:pointer;}
+.opts button.on-y{background:var(--grn);color:#fff;border-color:var(--grn);}
+.opts button.on-n{background:var(--red);color:#fff;border-color:var(--red);}
+.opts button.on-u{background:var(--amb);color:#fff;border-color:var(--amb);}
+#result{display:none;}
+.verdict{text-align:center;font-size:22px;font-weight:700;padding:16px;border-radius:14px;margin-bottom:12px;}
+.v-high{background:#fee2e2;color:var(--red);}
+.v-mid{background:#fef3c7;color:var(--amb);}
+.v-low{background:#dcfce7;color:var(--grn);}
+.reason{font-size:14px;}
+.reason li{margin-bottom:6px;}
+.tag{display:inline-block;font-size:11px;background:#f3f4f6;border-radius:6px;padding:1px 6px;margin:2px 4px 0 0;color:var(--mut);}
+.note{font-size:12px;color:var(--mut);margin-top:10px;}
+.ex{border:none;background:none;color:var(--acc);font-size:13px;padding:0;cursor:pointer;text-decoration:underline;}
+</style>
+</head>
+<body>
+<h1>副业红线检查器</h1>
+<div class="sub">输入副业想法，自动比对红线词库 + 合规三问，秒出「高危 / 注意 / 可行」</div>
+
+<div class="box">
+  <textarea id="idea" placeholder="用一两句话描述你的副业想法，例如：帮人撸店铺保证金赚差价…"></textarea>
+  <button class="ex" id="fillEx">填入示例：撸店铺保证金</button>
+  <div class="sec-title">合规三问（如实选）</div>
+  <div class="q"><div class="lab">1. 这事儿合法吗？</div><div class="opts" data-k="legal"><button data-v="y">合法</button><button data-v="u">不确定</button><button data-v="n">不合法</button></div></div>
+  <div class="q"><div class="lab">2. 平台规则允许吗？</div><div class="opts" data-k="platform"><button data-v="y">允许</button><button data-v="u">不确定</button><button data-v="n">不允许</button></div></div>
+  <div class="q"><div class="lab">3. 需要我伪造 / 欺骗 / 隐瞒吗？</div><div class="opts" data-k="fake"><button data-v="y">不需要</button><button data-v="u">不确定</button><button data-v="n">需要</button></div></div>
+  <button class="btn" id="check">开始检查</button>
+</div>
+
+<div class="box" id="result">
+  <div class="verdict" id="verdict">—</div>
+  <ul class="reason" id="reason"></ul>
+  <div class="note">本工具仅供初步自检，不构成法律意见。拿不准的副业，先小成本试、别押钱、别押身份。</div>
+</div>
+
+<script>
+// 红线词库：level=h 高危(违法) / w 注意(违规/灰产)
+var RED = [
+  {w:"撸保证金",lv:"h",t:"多为利用平台押金漏洞套现，涉嫌诈骗/非法经营"},
+  {w:"撸店铺",lv:"h",t:"利用店铺规则漏洞套利，常涉虚假交易"},
+  {w:"撸平台",lv:"h",t:"刷漏洞套利，平台必追责"},
+  {w:"撸漏洞",lv:"h",t:"利用系统漏洞，轻则封号冻款重则刑责"},
+  {w:"撸羊毛",lv:"w",t:"若针对平台漏洞型薅羊毛，属违规"},
+  {w:"刷单",lv:"h",t:"虚假交易，明确违法"},
+  {w:"刷销量",lv:"h",t:"虚假交易，明确违法"},
+  {w:"刷评",lv:"h",t:"刷好评/评论，违法"},
+  {w:"刷量",lv:"w",t:"数据造假，平台违规"},
+  {w:"刷赞",lv:"w",t:"数据造假，平台违规"},
+  {w:"跑分",lv:"h",t:"多为洗钱环节，涉嫌帮信罪"},
+  {w:"接码",lv:"h",t:"接码平台多用于黑产注册，违法"},
+  {w:"洗钱",lv:"h",t:"刑事犯罪"},
+  {w:"诈骗",lv:"h",t:"刑事犯罪"},
+  {w:"杀猪盘",lv:"h",t:"诈骗，刑事犯罪"},
+  {w:"博彩",lv:"h",t:"赌博违法"},
+  {w:"赌博",lv:"h",t:"赌博违法"},
+  {w:"私彩",lv:"h",t:"赌博违法"},
+  {w:"传销",lv:"h",t:"组织传销活动罪"},
+  {w:"拉人头",lv:"w",t:"若层层返利，疑似传销"},
+  {w:"资金盘",lv:"h",t:"庞氏骗局，违法"},
+  {w:"买卖账号",lv:"h",t:"买卖微信/各平台账号，违法"},
+  {w:"买卖微信",lv:"h",t:"违法"},
+  {w:"养号",lv:"w",t:"批量养号多用于黑产"},
+  {w:"盗号",lv:"h",t:"刑事犯罪"},
+  {w:"破解",lv:"h",t:"破解/入侵系统，违法"},
+  {w:"外挂",lv:"h",t:"制作使用外挂，违法"},
+  {w:"套现",lv:"w",t:"信用卡/花呗套现违规"},
+  {w:"信用卡套现",lv:"w",t:"违规"},
+  {w:"花呗套现",lv:"w",t:"违规"},
+  {w:"灰产",lv:"w",t:"灰色产业，风险高"},
+  {w:"黑产",lv:"h",t:"黑色产业，违法"},
+  {w:"偏门",lv:"w",t:"偏门多踩线，务必复核合法性"},
+  {w:"擦边",lv:"w",t:"擦边球易翻车"},
+  {w:"爬虫",lv:"w",t:"未授权爬取数据违规"},
+  {w:"倒卖数据",lv:"h",t:"侵犯公民个人信息，违法"},
+  {w:"个人信息",lv:"w",t:"售卖/倒卖个人信息违法"},
+  {w:"代写",lv:"w",t:"学术代写/代考违规"},
+  {w:"代考",lv:"w",t:"违规"},
+  {w:"引流",lv:"w",t:"若为违规项目引流，连带风险"}
+];
+var ans={legal:"u",platform:"u",fake:"u"};
+
+document.querySelectorAll(".opts").forEach(function(g){
+  g.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b)return;
+    var k=g.dataset.k, v=b.dataset.v;
+    ans[k]=v;
+    g.querySelectorAll("button").forEach(function(x){x.className="";});
+    b.className = v==="y"?"on-y":(v==="n"?"on-n":"on-u");
+  });
+});
+document.getElementById("fillEx").onclick=function(){
+  document.getElementById("idea").value="帮人撸店铺保证金，利用平台退款规则赚差价，不需要我出钱";
+};
+document.getElementById("check").onclick=function(){
+  var text=document.getElementById("idea").value.trim();
+  var reasons=[];
+  var level="low"; // low=可行 mid=注意 high=高危
+  function bump(l){ if(l==="high")level="high"; else if(l==="mid"&&level!=="high")level="mid"; }
+  if(!text){ alert("先描述一下你的副业想法～"); return; }
+  // 词库扫描
+  var hits=RED.filter(function(r){ return text.indexOf(r.w)>=0; });
+  hits.forEach(function(r){
+    reasons.push("🔴 命中红线词「"+r.w+"」："+r.t+(r.lv==="h"?"（高危·违法）":"（注意·违规）"));
+    bump(r.lv==="h"?"high":"mid");
+  });
+  // 合规三问
+  if(ans.fake==="n"){ reasons.push("🔴 需要伪造/欺骗/隐瞒 → 高危，直接 pass。"); bump("high"); }
+  else if(ans.fake==="u"){ reasons.push("🟡 是否需伪造/欺骗：你选了「不确定」→ 注意，先搞清楚再动手。"); bump("mid"); }
+  if(ans.legal==="n"){ reasons.push("🔴 你认定不合法 → 高危，坚决不做。"); bump("high"); }
+  else if(ans.legal==="u"){ reasons.push("🟡 合法性不确定 → 注意，查清楚前别投钱。"); bump("mid"); }
+  if(ans.platform==="n"){ reasons.push("🟡 平台不允许 → 注意，封号冻款风险。"); bump("mid"); }
+  else if(ans.platform==="u"){ reasons.push("🟡 平台规则不确定 → 注意，先读条款。"); bump("mid"); }
+
+  var v=document.getElementById("verdict");
+  if(level==="high"){ v.textContent="🚫 高危 · 别碰"; v.className="verdict v-high";
+    reasons.push("💡 结论：触碰法律/平台红线，与「零风险、不踩坑」底线冲突。换个思路，或把它做成「揭秘内容」反向吸流量（合规）。"); }
+  else if(level==="mid"){ v.textContent="⚠️ 注意 · 先核实"; v.className="verdict v-mid";
+    reasons.push("💡 结论：有风险点，别急着投钱。核实合法性+平台规则，小成本试水；也可考虑转型成合规内容赛道。"); }
+  else { v.textContent="✅ 可行 · 可推进"; v.className="verdict v-low";
+    reasons.push("💡 结论：当前未触发红线，可小步快跑验证。记住：先上场再学，但别押钱押身份，跑通再放大。"); }
+
+  var ul=document.getElementById("reason"); ul.innerHTML="";
+  reasons.forEach(function(r){ var li=document.createElement("li"); li.textContent=r; ul.appendChild(li); });
+  document.getElementById("result").style.display="block";
+  document.getElementById("result").scrollIntoView({behavior:"smooth"});
+};
+</script>
+</body>
+</html>
