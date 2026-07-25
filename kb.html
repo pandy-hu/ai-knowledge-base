@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>我的知识库</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--line:#e5e7eb;--txt:#1f2328;--mut:#6b7280;--acc:#2563eb;--red:#dc2626;--amb:#b45309;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);font-size:16px;line-height:1.6;}
+header{padding:18px 16px 10px;position:sticky;top:0;background:var(--bg);z-index:5;border-bottom:1px solid var(--line);}
+h1{font-size:20px;margin:0 0 2px;}
+.sub{color:var(--mut);font-size:13px;}
+#search{width:100%;margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:16px;background:#fff;outline:none;}
+#search:focus{border-color:var(--acc);}
+.filters{padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:#fff;font-size:13px;color:var(--mut);cursor:pointer;user-select:none;}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc);}
+main{padding:8px 16px 48px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px;}
+.ct{font-size:17px;font-weight:600;margin:0 0 6px;}
+.meta{font-size:12px;color:var(--mut);display:flex;flex-wrap:wrap;gap:6px 12px;margin-bottom:8px;align-items:center;}
+.badge{padding:2px 8px;border-radius:6px;font-weight:600;}
+.b-high{background:#fee2e2;color:var(--red);}
+.b-mid{background:#fef3c7;color:var(--amb);}
+.b-low{background:#e5e7eb;color:var(--mut);}
+.core{font-size:14px;color:#374151;background:#f3f4f6;border-left:3px solid var(--acc);padding:8px 10px;border-radius:0 8px 8px 0;margin-bottom:8px;}
+.body{font-size:14px;display:none;}
+.body.show{display:block;}
+.body h2,.body h3{margin:14px 0 6px;}
+.body ul{padding-left:20px;}
+.toggle{margin-top:6px;color:var(--acc);font-size:14px;cursor:pointer;user-select:none;}
+.tag{display:inline-block;font-size:11px;color:var(--mut);background:#f3f4f6;border-radius:6px;padding:1px 6px;margin:2px 4px 0 0;}
+.empty{text-align:center;color:var(--mut);padding:40px 0;}
+</style>
+</head>
+<body>
+<header>
+<h1>我的知识库</h1>
+<div class="sub">共 1 条 · 更新 2026-07-25</div>
+<input id="search" placeholder="搜索标题 / 标签 / 内容…" />
+<div class="filters" id="catFilters"></div>
+<div class="filters" id="tagFilters"></div>
+</header>
+<main id="list"></main>
+<script>
+var ENTRIES=[{"title": "零基础搭 AI 知识库，四步闭环越用越聪明", "source": "抖音 @姜胡说（视频链接 https://v.douyin.com/MDxC1r46FH8/ ，用户提供字幕）", "date": "2026-07-25", "category": "AI与方法", "tags": ["知识管理", "AI学习", "零基础", "个人成长", "姜胡说"], "relevance": "高", "monetize": "高", "core": "别用「准备」逃避开始——先上场，把看到的好内容直接喂给 AI，让它替你分「现在用 / 未来用」，每天复盘，越用越聪明。", "body_html": "<h2>原文要点（我提炼）</h2>\n<ol>\n<li><strong>第一步 工具准备</strong>：用 WorkBuddy + CodeBuddy（视频里叫 Workbody / Coder Work），免费、每天送积分，拿来即用，不配环境、不纠结 Cloud Code / Codex。</li>\n<li><strong>第二步 建档案</strong>：告诉 AI「你是谁、干嘛的、优点、缺点、目标、卡点」，把它当几十万的咨询顾问，让它记住你，以后给你建议、方法、朝目标推。</li>\n<li><strong>第三步 喂内容</strong>：看到好文章直接复制给 AI；好视频/音频给链接。问它「根据我的情况，这知识怎么用」——它列「现在马上能用的一二三」和「未来能用的知识块」。</li>\n<li><strong>第四步 每天复盘</strong>：用了之后说「我现在这么用，结果是这样，你复盘下，告诉我怎么改进」。每天做，几天就和别人不一样。</li>\n<li><strong>核心心智</strong>：很多人学傻了，非要「学会再用」；正确是「先上场，一边学一边用，甚至不必懂，先帅起来」。</li>\n</ol>\n<hr />\n<h2>① 怎么用</h2>\n<p><strong>现在马上能做：</strong>\n1. <strong>补一份「目标 + 卡点」档案</strong>：我已知你是上野（上海 / 关注 AI·创业·信息差），但视频法强调主动让 AI 当顾问。你下条消息补一句「我的目标 XX、卡点 XX」，我记进长期记忆。\n2. <strong>把「喂内容→问怎么用」固化</strong>：本知识库就是这个动作的产品化——你贴内容，我出四问卡。\n3. <strong>每天复盘接进现有简报</strong>：你已有「每日 AI 热点简报自动化」，我在简报末尾加一段「今日可落地的 1 个动作 + 复盘提问」，闭环就成了。</p>\n<p><strong>未来能用的（存成知识块）：</strong>\n- 「先上场再学」心态，可作为你所有内容产品的统一方法论标签。\n- 「知识块」概念 → 以后每条卡都能被检索、被二次组合成文章/课。</p>\n<hr />\n<h2>② 和你之前项目的关系</h2>\n<ul>\n<li><strong>每日 AI 热点简报</strong>：现成的「喂内容」管道，每天已有 AI 资讯流入；只差补「复盘 + 怎么用」两环，正好和本知识库合并成一条流水线。</li>\n<li><strong>mini-apps / mini-games</strong>：可直接做一个「个人知识库」网页应用（卡片 + 标签 + 搜索 + 移动端），这是顺手的开发项目，也能当 demo 接单。</li>\n<li><strong>GitHub SSH 免密</strong>：知识库可版本化备份到新仓库（或并入 web-games 仓库），防丢、可公开当作品集。</li>\n<li><strong>元宝变现意图</strong>：这条本身就是「用元宝当低成本虚拟员工」的最佳示范案例。</li>\n</ul>\n<hr />\n<h2>③ 能不能帮你挣钱</h2>\n<ul>\n<li><strong>路径 A（卖方法论）</strong>：把「四步闭环」包装成小报童专栏 / 知识星球 / 短视频系列，你已是案例，自带信任。</li>\n<li><strong>路径 B（卖工具/模板）</strong>：做「个人 AI 知识库」网页模板或 Notion/腾讯文档模板，按订阅或一次性卖。</li>\n<li><strong>路径 C（接单）</strong>：帮小白搭「自己的 AI 知识库 + 顾问档案」，你用自己跑通的流程交付，客单价低但可批量。</li>\n<li><strong>路径 D（信息差产品）</strong>：每日简报 + 知识库筛选 → 付费「AI 机会日报」，你已有自动化底座。</li>\n<li><strong>结论</strong>：<strong>变现潜力高</strong>。方法轻、可复制、和你已有资产（简报/游戏/SSH）100% 咬合，启动成本≈0。</li>\n</ul>\n<hr />\n<h2>④ 灵感延伸</h2>\n<ul>\n<li>把知识库做成<strong>手机 HTML 浏览器</strong>（搜索+标签），你手机上看更爽，也能当产品卖。</li>\n<li>做一个<strong>「喂我一条，出一张卡」的小工具</strong>，朋友圈/社群引流用。</li>\n<li>四步法 → 拍成你自己的短视频，反哺「姜胡说」这类流量池，做个人 IP。</li>\n</ul>"}];
+var CATS=["AI与方法"];
+var TAGS=["AI学习", "个人成长", "姜胡说", "知识管理", "零基础"];
+var curCat="全部",curTags=[],q="";
+function badge(t,label){if(!t)return"";var c=t==="高"?"b-high":(t==="中"?"b-mid":"b-low");return'<span class="badge '+c+'">'+label+t+'</span>';}
+function renderFilters(){
+ var cf=document.getElementById("catFilters");cf.innerHTML="";
+ ["全部"].concat(CATS).forEach(function(c){var d=document.createElement("div");d.className="chip"+(c===curCat?" on":"");d.textContent=c;d.onclick=function(){curCat=c;renderFilters();render();};cf.appendChild(d);});
+ var tf=document.getElementById("tagFilters");tf.innerHTML="";
+ TAGS.forEach(function(t){var on=curTags.indexOf(t)>=0;var d=document.createElement("div");d.className="chip"+(on?" on":"");d.textContent="#"+t;d.onclick=function(){if(on){curTags=curTags.filter(function(x){return x!==t;});}else{curTags.push(t);}renderFilters();render();};tf.appendChild(d);});
+}
+function render(){
+ var box=document.getElementById("list");box.innerHTML="";
+ var list=ENTRIES.filter(function(e){
+  if(curCat!=="全部"&&e.category!==curCat)return false;
+  if(curTags.length&&!curTags.every(function(t){return e.tags.indexOf(t)>=0;}))return false;
+  if(q){var s=(e.title+e.core+e.body_html+e.tags.join("")).toLowerCase();if(s.indexOf(q.toLowerCase())<0)return false;}
+  return true;
+ });
+ if(!list.length){box.innerHTML='<div class="empty">没有匹配的内容</div>';return;}
+ list.forEach(function(e){
+  var card=document.createElement("div");card.className="card";
+  var tags=e.tags.map(function(t){return '<span class="tag">#'+t+'</span>';}).join("");
+  card.innerHTML='<div class="ct">'+e.title+'</div>'+
+   '<div class="meta"><span>'+e.date+'</span><span>'+e.category+'</span>'+badge(e.relevance,"关联")+badge(e.monetize,"变现")+'</div>'+
+   (e.core?'<div class="core">'+e.core+'</div>':'')+
+   '<div class="body">'+e.body_html+'<div style="margin-top:8px">'+tags+'</div></div>'+
+   '<div class="toggle" onclick="tog(this)">展开 ▾</div>';
+  box.appendChild(card);
+ });
+}
+function tog(el){var b=el.previousElementSibling;if(b.classList.contains("show")){b.classList.remove("show");el.textContent="展开 ▾";}else{b.classList.add("show");el.textContent="收起 ▴";}}
+document.getElementById("search").addEventListener("input",function(ev){q=ev.target.value;render();});
+renderFilters();render();
+</script>
+</body></html>
