@@ -37,7 +37,7 @@ textarea:focus{border-color:var(--acc);}
 </head>
 <body>
 <h1>副业红线检查器</h1>
-<div class="sub">输入副业想法，自动比对红线词库 + 合规三问，秒出「高危 / 注意 / 可行」</div>
+<div class="sub">输入副业想法，自动比对红线词库 + 副业坑点 + 合规三问，秒出「高危 / 注意 / 可行」</div>
 
 <div class="box">
   <textarea id="idea" placeholder="用一两句话描述你的副业想法，例如：帮人撸店铺保证金赚差价…"></textarea>
@@ -99,6 +99,16 @@ var RED = [
   {w:"代考",lv:"w",t:"违规"},
   {w:"引流",lv:"w",t:"若为违规项目引流，连带风险"}
 ];
+// 副业坑点库：level=mid 注意（非违法，但做了容易亏/翻车/客户翻脸）
+// keys 为命中关键词（任一出现即触发），t 为提醒，fix 为规避建议
+var PIT = [
+  {keys:["亏欠","内疚感","制造焦虑"," guilt"], t:"「亏欠痒」式转化（让人因内疚/亏欠而下单）慎用——属道德绑架，易被判定制造焦虑/诱导，伤信任且平台可能限流。", fix:"用「欲拥有感/差一点儿」等正向痒点替代，不绑定负罪感。"},
+  {keys:["实体店","实体","重服务","线下店","线下服务","开店"], t:"实体/重服务副业≠零成本：有场地/人力/履约成本，不是点几下就到账，别被「零成本」话术骗。", fix:"选轻交付、可复利的副业（卖框架/接单/内容），实体店只作「观察学习」不轻易下场。"},
+  {keys:["AI出图","AI设计","ImageGen","电商图","海报设计","详情页","电商设计","AI海报"], t:"用 AI（ImageGen 等）出图做交付，图里文字是伪文字乱码、且无 PSD 分层——直接交客户会翻脸。", fix:"交付前人工替换真实文字、去水印；真 PSD 分层/多角度用 Lovart 兜底。"},
+  {keys:["三视图","多角度","3D图","产品三视图"], t:"免费 AI 出三视图会「三个同款正面」，多角度强一致做不到。", fix:"只交付主图+海报+详情页首屏；三视图降级为可选项，别对客户承诺。"},
+  {keys:["AI短剧","AI视频","分镜","角色一致","短剧","影视","AI影视"], t:"AI 影视/短剧用免费 ImageGen/VideoGen，同一角色不同镜头会「变脸」；生成视频也不带可读字幕。", fix:"真交付用可灵/即梦身份锁定 + 剪映加字幕；提案里别承诺角色跨镜头一致。"},
+  {keys:["字幕","配音","运镜"], t:"AI 生成视频不带可读字幕、运镜意图难精确还原、配音需 TTS——都是后期活。", fix:"剪辑阶段在剪映/CapCut 补字幕+配音，运镜只作方向参考。"}
+];
 var ans={legal:"u",platform:"u",fake:"u"};
 
 document.querySelectorAll(".opts").forEach(function(g){
@@ -124,6 +134,13 @@ document.getElementById("check").onclick=function(){
   hits.forEach(function(r){
     reasons.push("🔴 命中红线词「"+r.w+"」："+r.t+(r.lv==="h"?"（高危·违法）":"（注意·违规）"));
     bump(r.lv==="h"?"high":"mid");
+  });
+  // 副业坑点扫描
+  PIT.forEach(function(p){
+    if(p.keys.some(function(k){ return text.indexOf(k)>=0; })){
+      reasons.push("🟡 踩坑提醒："+p.t+" 建议："+p.fix);
+      bump("mid");
+    }
   });
   // 合规三问
   if(ans.fake==="n"){ reasons.push("🔴 需要伪造/欺骗/隐瞒 → 高危，直接 pass。"); bump("high"); }
