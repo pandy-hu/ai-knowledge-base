@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻省理工 AI 学习法 · 拆解</title>
+<style>
+  :root{ --bg:#0f1115; --card:#1a1d24; --line:#2a2f3a; --txt:#e8eaf0; --sub:#9aa3b2; --acc:#7c5cff; --acc2:#27c4a0; --warn:#ffb454; --pink:#ff6b9d; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding:18px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:24px;margin-bottom:4px}
+  .meta{color:var(--sub);font-size:13px;margin-bottom:18px}
+  .hero{background:linear-gradient(135deg,#2a1f4a,#1a1d24);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:18px}
+  .hero b{color:var(--acc)}
+  h2{font-size:19px;margin:26px 0 12px;padding-left:10px;border-left:4px solid var(--acc)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+  .q{display:flex;gap:12px;align-items:flex-start;margin:14px 0}
+  .num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+  .qbody b{color:var(--acc2)}
+  .map{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+  .mcell{background:#14171d;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px}
+  .mcell b{color:var(--warn)}
+  .rel{background:#14171d;border-left:3px solid var(--pink);border-radius:0 10px 10px 0;padding:12px 14px;margin:10px 0;font-size:14px}
+  .rel b{color:var(--pink)}
+  .steps{counter-reset:s;list-style:none}
+  .steps li{position:relative;padding:10px 0 10px 38px;border-bottom:1px dashed var(--line);font-size:14px}
+  .steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:10px;width:26px;height:26px;border-radius:50%;background:var(--acc2);color:#06281f;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .idea{background:#14171d;border:1px solid var(--warn);border-radius:10px;padding:14px;margin:10px 0;font-size:14px}
+  .idea b{color:var(--warn)}
+  .tag{display:inline-block;background:#2a2f3a;color:var(--sub);font-size:12px;padding:2px 9px;border-radius:20px;margin:2px 4px 2px 0}
+  .foot{color:var(--sub);font-size:12px;margin-top:24px;text-align:center}
+  .pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:700;margin-right:8px}
+  .p-high{background:rgba(39,196,160,.15);color:var(--acc2)}
+  .p-mid{background:rgba(255,180,84,.15);color:var(--warn)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🎓 麻省理工 AI 学习法 · 拆解</h1>
+  <div class="meta">抖音 @李睿讲Ai《500万人都在围观的麻省理工 AI 学习法》· 约 3′45″ · 第 28 张四问卡</div>
+
+  <div class="hero">
+    <b>一句话：</b>把这门课所有资料（6 本教材+15 篇顶刊+录音+笔记）全扔给 AI，再问 <b>3 个神级问题</b>，48 小时啃完一门陌生课并通过资格考试。导师怀疑作弊，当场演示后沉默——"我教了 20 年书，没想到 AI 还能这么用"。<br>
+    <span style="color:var(--sub)">底层：主动性（AI 当严师逼自己搞明白）+ 提问能力（提好问题是新门槛）+ 抓本质思维（最值钱）。</span>
+  </div>
+
+  <h2>① 3 个神级问题（方法骨架）</h2>
+  <div class="card">
+    <div class="q"><div class="num">1</div><div class="qbody"><b>要思维模型，不要知识点。</b><br>"这个领域里，所有专家都认同的 5 个核心思维模式是什么？"<br><span style="color:var(--sub)">高手一上来问"你们这群专家到底用什么框架看问题"，而非背公式概念。这些是牛人磨几十年的底层逻辑。</span></div></div>
+    <div class="q"><div class="num">2</div><div class="qbody"><b>要争议地图，不要标准答案。</b><br>"这个领域里，专家争论最凶的 3 个问题是什么？双方核心论据分别是什么？"<br><span style="color:var(--sub)">价值在争议里：分清共识/分歧、边界在哪、已解决/未解决什么 → 画出"知识地图"。</span></div></div>
+    <div class="q"><div class="num">3</div><div class="qbody"><b>要真懂检测器。</b><br>"生成 10 个问题，判断一个人是真懂还是死记硬背。"<br><span style="color:var(--sub)">AI 时代最怕"以为懂了只是背了表面知识"。答不出就追问漏洞、接着看、接着聊，把 AI 变成最严私人导师。</span></div></div>
+  </div>
+
+  <h2>② 底层 3 逻辑</h2>
+  <div class="map">
+    <div class="mcell"><b>主动性</b><br>把 AI 当最严老师逼自己搞明白，不是有了 AI 就躺平。</div>
+    <div class="mcell"><b>提问能力</b><br>提好问题是新门槛——"专家怎么思考"带你进底层逻辑。</div>
+    <div class="mcell"><b>思维</b><br>工具会过时，但抓本质建框架、判断真懂假懂的能力最值钱。</div>
+    <div class="mcell"><b>结论</b><br>只会抄答案→越来越弱；用 AI 训练提问/理解/复盘/表达→被带得越来越强。</div>
+  </div>
+
+  <h2>③ 和你已有资产的关系（关联度：极高）</h2>
+  <div class="rel"><b>与你"蒸馏成四问卡"同构：</b>你让我"怎么用 / 和之前关系 / 能不能挣钱 / 灵感延伸"——本质就是"问 AI 神级问题逼它抓本质思维模型"，和本卡第 1、3 问一模一样。你早就在用这套方法，只是没命名。</div>
+  <div class="rel"><b>与「单点突破法」（卡27）同调：</b>都反对"摊大饼式学习"——传统学霸从头啃教材，这两套都"扔资料+精准提问"跳到本质。</div>
+  <div class="rel"><b>与「情报级套话技巧」呼应：</b>核心都是"问对问题"——挖别人真实意图 vs 逼自己抓领域本质，提问能力是共同底层。</div>
+  <div class="rel"><b>与「Vibe Coding」（卡26）、「巴菲特的稳/见路不走」同线：</b>都用 AI 当引擎（主动性一致）；抓"专家思维框架"=复制条件不复制姿态，要"争议地图"=别只信无争议标准答案。</div>
+
+  <h2>④ 零成本上手（3 步）</h2>
+  <ol class="steps">
+    <li><b>备料</b>：把你想学的领域资料（书/文章/笔记/视频字幕）丢给我或任意 AI。</li>
+    <li><b>问 3 问</b>：①专家共识的 5 个思维模型 ②争得最凶的 3 个问题及双方论据 ③生成 10 个"真懂检测题"。</li>
+    <li><b>死磕检测题</b>：答不出就让我指出漏洞→你去看→回来再答，循环到真懂。把 AI 当严师，不是答案机。</li>
+  </ol>
+
+  <h2>⑤ 灵感延伸（待执行）</h2>
+  <div class="idea">
+    <b>①</b> 把"3 神级问题"固化进知识库 entry-template 提示语（"扔资料+问思维模型/争议/真懂检测器"），每张卡自动更狠。<br>
+    <b>②</b> 做「AI 学习法喂饭包」去星球引流（复用做3模板包结构，零边际成本）。<br>
+    <b>③</b> 英文/技能学习实测：挑陌生书用 3 问让我带读，写成「48 小时啃完 X」记录引流。<br>
+    <b>④</b> 与卡27（单点突破）、卡26（Vibe Coding）合成「个人成长·学习方法」总卡，作成长主线枢纽。
+  </div>
+
+  <div style="margin-top:14px">
+    <span class="tag">项目关联：极高</span><span class="tag">变现潜力：高</span>
+    <span class="pill p-high">个人成长</span><span class="pill p-mid">学习方法</span>
+  </div>
+
+  <div class="foot">知识库第 28 张四问卡 · 已同步四端（本地 / GitHub / 腾讯文档 / 手机版 kb.html）<br>视频本地：downloads/mit-ai-learning/douyin-7669740560743238931/</div>
+</div>
+</body>
+</html>
