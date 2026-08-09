@@ -1,0 +1,11 @@
+{
+  "template_folder": "templates",
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "enable_folder_templates": false,
+  "folder_templates": [],
+  "script_folders": [],
+  "enable_sys_commands": false,
+  "shell": "",
+  "syntax_highlighting": true
+}

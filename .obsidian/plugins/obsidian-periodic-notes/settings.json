@@ -1,0 +1,9 @@
+{
+  "periodicNotes": {
+    "daily": {
+      "format": "YYYY-MM-DD",
+      "folder": "inbox",
+      "template": "templates/daily.md"
+    }
+  }
+}

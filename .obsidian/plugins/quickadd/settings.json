@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "macros": {},
+  "choices": [
+    {
+      "id": "kb-new-card",
+      "name": "➕ 新四问卡",
+      "type": "Template",
+      "templater": true,
+      "filePath": "templates/entry-template.md",
+      "fileName": "{{DATE:YYYY-MM-DD}}-{{VALUE:卡片标题}}",
+      "folder": {
+        "enabled": true,
+        "folder": "categories/AI与方法",
+        "subFolders": []
+      },
+      "createFile": true,
+      "overwriteFile": false,
+      "appendLink": true,
+      "delay": 0,
+      "notify": true
+    },
+    {
+      "id": "kb-capture",
+      "name": "📥 速记到捕获箱",
+      "type": "Capture",
+      "captureTo": "inbox/捕获箱.md",
+      "createFile": false,
+      "prepend": true,
+      "lineOrBlock": "📥 明日简报候选",
+      "notify": true,
+      "templater": false,
+      "value": "- {{VALUE:随手记}}"
+    }
+  ],
+  "settings": {
+    "templateFile": "",
+    "folder": "",
+    "fileName": "",
+    "createFile": true,
+    "filePath": "",
+    "notify": true,
+    "appendLink": false,
+    "overwriteFile": false,
+    "delay": 0,
+    "templater": true
+  }
+}

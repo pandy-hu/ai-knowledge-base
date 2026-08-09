@@ -1,0 +1,9 @@
+{
+  "enableDataviewJs": true,
+  "enableInlineDataview": true,
+  "emitInlineDataviewJs": true,
+  "dataviewJsKeyword": "dataviewjs",
+  "inlineQuotes": "[]",
+  "inlineJsQuotes": "[]",
+  "confirmDataviewJsExecution": false
+}

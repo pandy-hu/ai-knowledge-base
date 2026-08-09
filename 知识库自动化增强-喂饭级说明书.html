@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>知识库自动化增强 · 喂饭级说明书</title>
+<style>
+:root{--bg:#f7f7f8;--card:#fff;--line:#e5e7eb;--txt:#1f2328;--mut:#6b7280;--acc:#2563eb;--grn:#059669;--amb:#b45309;--red:#dc2626;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--txt);font-size:16px;line-height:1.65;padding:0 0 60px;}
+header{padding:22px 18px 16px;background:linear-gradient(135deg,#2563eb,#1e40af);color:#fff;}
+header h1{margin:0 0 6px;font-size:22px;}
+header p{margin:0;opacity:.9;font-size:14px;}
+.wrap{padding:14px 16px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:14px 0;}
+.card h2{margin:0 0 10px;font-size:18px;display:flex;align-items:center;gap:8px;}
+.card h3{margin:14px 0 6px;font-size:15px;color:var(--acc);}
+.num{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex:0 0 auto;}
+.step{display:flex;gap:10px;margin:12px 0;align-items:flex-start;}
+.step .num{margin-top:0;}
+.step .body{flex:1;}
+.step .body b{color:var(--txt);}
+.muted{color:var(--mut);font-size:13px;}
+code{background:#0f172a;color:#e2e8f0;padding:2px 7px;border-radius:6px;font-size:13px;font-family:ui-monospace,Menlo,Consolas,monospace;}
+pre{background:#0f172a;color:#e2e8f0;padding:12px 14px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.5;}
+pre .c{color:#94a3b8;}
+.tag{display:inline-block;font-size:11px;background:#eff6ff;color:var(--acc);border-radius:6px;padding:2px 8px;margin:2px 4px 0 0;}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:6px;}
+.b-grn{background:#d1fae5;color:var(--grn);}
+.b-amb{background:#fef3c7;color:var(--amb);}
+.b-red{background:#fee2e2;color:var(--red);}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+th{background:#f3f4f6;font-weight:600;}
+.callout{border-left:4px solid var(--amb);background:#fffbeb;padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0;font-size:14px;}
+.callout.blue{border-color:var(--acc);background:#eff6ff;}
+.ok{border-left:4px solid var(--grn);background:#ecfdf5;}
+ul{margin:8px 0;padding-left:20px;}
+li{margin:4px 0;}
+.kbd{background:#fff;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px;font-size:12px;font-family:ui-monospace,monospace;}
+</style>
+</head>
+<body>
+<header>
+<h1>🤖 知识库自动化增强 · 喂饭级说明书</h1>
+<p>方案 B：把「元宝 + 本地库」剩下的 10% 自动化 —— Obsidian 插件三件套 + 知识迭代 Skill</p>
+</header>
+
+<div class="wrap">
+
+<div class="card">
+<h2>📌 先说清楚：你已经有 90% 了</h2>
+<p>教程教的是 <b>Obsidian + Codex（OpenAI 付费）</b>。你的情况是：</p>
+<table>
+<tr><th>教程要的</th><th>你已有什么（零成本）</th></tr>
+<tr><td>本地 markdown 仓库</td><td>✅ <code>knowledge-base/</code> 25 张四问卡 + 分类</td></tr>
+<tr><td>AI 引擎（Codex）</td><td>✅ <b>元宝 / WorkBuddy</b> 零成本平替，不用开 OpenAI 账号、不花钱</td></tr>
+<tr><td>信息自动采集</td><td>✅ 每日简报自动化 + idea-capture 捕获箱</td></tr>
+<tr><td>多端同步</td><td>✅ kb.html + GitHub + 腾讯文档 四端</td></tr>
+<tr><td>知识沉淀 SOP</td><td>✅ 四问卡 + 蒸馏链路</td></tr>
+</table>
+<p class="muted">B 方案补的，是「在 Obsidian 里点一下就建卡 / 自动列出所有卡 / 定期扫库查冗余」这层体验自动化——<b>不涉及任何付费工具</b>。</p>
+</div>
+
+<div class="card">
+<h2>🧩 B 给你加的 4 件套</h2>
+<table>
+<tr><th>插件 / 工具</th><th>干嘛用</th><th>要不要花钱</th></tr>
+<tr><td><b>QuickAdd</b></td><td>侧栏点一下 → 输入标题 → 自动套模板建卡；随手记捕获箱</td><td>免费</td></tr>
+<tr><td><b>Templater</b></td><td>建卡时自动套四问卡骨架，光标跳到标题直接写</td><td>免费</td></tr>
+<tr><td><b>Dataview</b></td><td>打开索引页即实时列出全部卡片，免手维护清单</td><td>免费</td></tr>
+<tr><td><b>知识迭代 Skill</b><br><span class="muted">WorkBuddy 侧</span></td><td>定期扫库查冗余 / 断链 / 重复标题 / 空卡，出报告</td><td>免费</td></tr>
+</table>
+<div class="callout blue">⚠️ <b>不用装 Copilot 插件</b>：那是接 OpenAI 付费模型的。你的 AI 引擎是元宝，已经够用。装了反而要填 key、要花钱。</div>
+</div>
+
+<div class="card">
+<h2>🚀 三步上手（总耗时约 5 分钟）</h2>
+
+<div class="step"><div class="num">1</div><div class="body">
+<b>装 Obsidian 并打开你的库</b>
+<ul>
+<li>官网 <code>obsidian.md</code> 下载（Win/Mac 都免费），安装。</li>
+<li>打开 Obsidian → <span class="kbd">打开其他仓库</span> → <span class="kbd">通过文件夹打开</span> → 选中 <code>knowledge-base/</code> 文件夹。</li>
+<li>首次打开会提示「启用社区插件？」→ 点 <b>启用</b>。配置已写好，三件套直接生效。</li>
+</ul>
+</div></div>
+
+<div class="step"><div class="num">2</div><div class="body">
+<b>若没自动提示，手动开社区插件</b>
+<ul>
+<li>左下角 <span class="kbd">设置 ⚙</span> → <b>社区插件</b> → 关掉「安全模式」。</li>
+<li>点 <b>已安装插件</b> → 应看到 QuickAdd / Templater / Dataview / Periodic Notes 已列在其中 → 把开关打开。</li>
+<li>若列表是空的：点 <b>浏览</b> → 搜这 4 个名字 → 安装 → 启用。装完会自动读取我写好的 <code>.obsidian/plugins/</code> 配置。</li>
+</ul>
+<div class="callout">装好后如果配置被重置（很少见），照本文最下方「故障排查」手动粘贴即可。</div>
+</div></div>
+
+<div class="step"><div class="num">3</div><div class="body">
+<b>验证三件套</b>
+<ul>
+<li><b>QuickAdd</b>：左侧栏出现 <span class="kbd">⚡</span> 闪电图标 → 点开能看到「➕ 新四问卡」「📥 速记到捕获箱」。</li>
+<li><b>Templater</b>：命令面板（<span class="kbd">Ctrl/Cmd+P</span>）搜 Templater → 确认模板文件夹是 <code>templates</code>。</li>
+<li><b>Dataview</b>：打开库里的 <code>01-自动索引.md</code> → 应实时显示全部卡片列表（不是代码块）。</li>
+</ul>
+</div></div>
+</div>
+
+<div class="card">
+<h2>✍️ 日常建卡流（QuickAdd 一键）</h2>
+<ol>
+<li>点左侧 <span class="kbd">⚡</span> → 选 <b>➕ 新四问卡</b>。</li>
+<li>弹出框输入标题（如「茅台冰激凌复盘」）→ 回车。</li>
+<li>自动在 <code>categories/AI与方法/</code> 生成 <code>YYYY-MM-DD-标题.md</code>，已套好四问卡骨架，光标在标题处。</li>
+<li>把内容填进四问卡 → 保存。<span class="muted">（分类默认落到 AI与方法，建完拖到正确分类文件夹即可；或让元宝帮你归）</span></li>
+</ol>
+<div class="ok callout">💡 更省事的做法：还是把链接/视频丢给<b>元宝</b>，它蒸馏成卡 + 自动归档 + 四端同步。QuickAdd 适合你离线想自己快速记一笔时用。</div>
+</div>
+
+<div class="card">
+<h2>📇 Dataview 自动索引</h2>
+<p>打开 <code>01-自动索引.md</code>，Obsidian 会把它渲染成实时表格：</p>
+<pre><span class="c">// 自动列出 categories/ 下所有卡片，按文件名倒序</span>
+TABLE file.folder AS 所在分类, file.mtime AS 最后更新
+FROM "categories"
+SORT file.name DESC</pre>
+<p class="muted">卡片元数据（关联度/变现）仍看 <code>index.md</code>（手机端 kb.html 也读它）；Dataview 负责「有哪些卡 + 一键跳转」，再也不用手动数卡。</p>
+</div>
+
+<div class="card">
+<h2>🔄 知识迭代 Skill（扫库查冗余）</h2>
+<p>这是 WorkBuddy 侧的自动化：定期跑一遍，找出库里的「坏味道」。</p>
+<table>
+<tr><th>检查项</th><th>说明</th></tr>
+<tr><td>重复标题 / 文件名</td><td>同一天同名卡、近似标题</td></tr>
+<tr><td>断链</td><td>卡片里链接了不存在的文件</td></tr>
+<tr><td>空卡 / 发育不良</td><td>正文 &lt; 200 字疑似没写完</td></tr>
+<tr><td>索引遗漏</td><td><code>index.md</code> 漏登的卡 / 已删但还登记的</td></tr>
+<tr><td>分类漂移</td><td>卡放错一级分类文件夹</td></tr>
+</table>
+<p>调用方式：跟元宝说「<b>扫一下知识库</b>」或「<b>跑知识迭代</b>」即可触发，输出一份可读报告，你决定修不修。</p>
+</div>
+
+<div class="card">
+<h2>🛠️ 故障排查</h2>
+<h3>插件装了但配置不对？</h3>
+<p>把我写好的配置重新贴回 Obsidian 的插件设置文件（在 <code>knowledge-base/.obsidian/plugins/&lt;插件名&gt;/settings.json</code>）。或最省事：卸载插件重装，会自动读回配置。</p>
+<h3>Dataview 页显示成代码而不是表格？</h3>
+<ul>
+<li>确认 Dataview 已启用（设置 → 社区插件 → Dataview 开关开）。</li>
+<li>代码块语言必须是 <code>dataview</code>（不是 ```js）。</li>
+</ul>
+<h3>想接真·AI 对话在 Obsidian 里？</h3>
+<p>装 <b>Copilot</b> 插件，但需自备模型 key（OpenAI / 本地 Ollama 等），<b>要花钱或本地算力</b>。你不装也完全不影响——元宝才是你的主引擎。</p>
+</div>
+
+<div class="card ok">
+<h2>✅ 做完这些，你得到</h2>
+<ul>
+<li>一个<b>本地优先、零订阅费</b>的知识操作系统（Obsidian 看 + 元宝整理）。</li>
+<li>建卡从「打开编辑器抄模板」变成「点一下」。</li>
+<li>卡片清单自动生成，不再手数。</li>
+<li>库脏了有 Skill 定期体检，不会越攒越乱。</li>
+</ul>
+<p class="muted">下一步可选：把这套「教程同款 + 元宝平替 + 自动化」打包成付费模板，去知识星球引流。</p>
+</div>
+
+</div>
+</body>
+</html>
