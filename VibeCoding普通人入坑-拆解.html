@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibe Coding 普通人入坑 · 拆解</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+         background:#f4f5f7; color:#1f2329; line-height:1.7; padding:18px; }
+  .wrap { max-width:720px; margin:0 auto; }
+  .hero { background:linear-gradient(135deg,#6c5ce7,#a29bfe); color:#fff; border-radius:18px;
+          padding:26px 22px; margin-bottom:18px; }
+  .hero h1 { font-size:23px; margin-bottom:8px; }
+  .hero p { font-size:14px; opacity:.95; }
+  .tag { display:inline-block; background:rgba(255,255,255,.25); border-radius:20px;
+         padding:3px 11px; font-size:12px; margin:4px 6px 0 0; }
+  .card { background:#fff; border-radius:14px; padding:18px 18px; margin-bottom:14px;
+          box-shadow:0 2px 10px rgba(0,0,0,.05); }
+  .card h2 { font-size:17px; color:#6c5ce7; margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+  .card h2 .n { background:#6c5ce7; color:#fff; width:24px; height:24px; border-radius:50%;
+                display:flex; align-items:center; justify-content:center; font-size:13px; flex:none; }
+  .lead { background:#fff8e1; border-left:4px solid #fdcb6e; padding:12px 14px; border-radius:0 10px 10px 0;
+          font-size:14px; margin-bottom:14px; }
+  ul { padding-left:20px; font-size:14px; }
+  li { margin-bottom:7px; }
+  .hl { background:#fff3bf; padding:1px 5px; border-radius:4px; font-weight:600; }
+  .tl { position:relative; padding-left:22px; }
+  .tl::before { content:""; position:absolute; left:6px; top:4px; bottom:4px; width:2px; background:#a29bfe; }
+  .tl li { position:relative; list-style:none; margin-left:-20px; padding-left:20px; margin-bottom:12px; }
+  .tl li::before { content:""; position:absolute; left:0; top:7px; width:11px; height:11px;
+                   border-radius:50%; background:#6c5ce7; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .mini { background:#f8f7ff; border-radius:10px; padding:12px; font-size:13px; }
+  .mini b { color:#6c5ce7; }
+  .rel { background:#e8f8f0; border-radius:10px; padding:12px 14px; font-size:14px; margin-bottom:10px; }
+  .money { background:#fff0f0; border-radius:10px; padding:12px 14px; font-size:14px; }
+  .step { background:#6c5ce7; color:#fff; border-radius:10px; padding:12px 14px; font-size:14px; margin-bottom:8px; }
+  .step b { font-size:15px; }
+  .foot { text-align:center; font-size:12px; color:#999; margin-top:10px; }
+  a { color:#6c5ce7; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>Vibe Coding 普通人入坑</h1>
+    <p>AI 替你"做"软件，零代码也能造产品</p>
+    <p style="margin-top:8px;font-size:13px;opacity:.9">抖音 @liliMozi（编导转行全职开发者）· 约 7′47″ · 4K</p>
+    <div style="margin-top:10px">
+      <span class="tag">AI与方法 #26</span>
+      <span class="tag">项目关联度 极高</span>
+      <span class="tag">变现潜力 高</span>
+      <span class="tag">元宝平替 Codex</span>
+    </div>
+  </div>
+
+  <div class="lead">
+    📌 <b>一句话</b>：Vibe Coding 就是用 AI agent（Codex / Claude Code / <span class="hl">元宝</span>）替你写软件、跑脚本、自动化。视频核心结论——<b>获益最大的是从没碰过代码的人</b>，因为 AI 搜不到"人的生活直觉"，而这恰恰是你手里的牌。
+  </div>
+
+  <div class="card">
+    <h2><span class="n">1</span>核心论点（视频讲什么）</h2>
+    <ul>
+      <li><b>定义</b>：通过 AI agent 帮你写软件、跑脚本、自动化工作流——把"说"的能力变成"做"。</li>
+      <li><b>历史三跳</b>：ChatGPT 只会写指南不会上手 → 命令行（黑框）本是古老的"打代码"入口、AI 擅长写代码让它复活 → 姚舜宇 <span class="hl">ReAct loop</span>（做一步→反思→再想下一步）= agent 起点，AI 从"会说话"变"能操作"（豆包手机本质也是 agent）。</li>
+      <li><b>价格拐点</b>：DeepSeek 把编程价格砍到 1/10；Kimi K3 世界第三。模型半年一跃（K3 演示复刻整个 WinXP 还能玩 GTA），预期要拉满。</li>
+      <li><b>普通人获益最大</b>：agent 干掉重复活，但 AI 搜不到"生活直觉 / 人情敏感 / 行业经验"——agent + 人的主观能动性 = 时代答案（辛顿：让 AI 像母亲托举我们，而非控制）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">2</span>从"说"到"做"的三类实战</h2>
+    <ul class="tl">
+      <li><b>文件 / 系统操作</b>：清理 C 盘、卸载流氓软件、关 Win 自动更新、配显示器色彩管理、改 Steam host 节点。⚠️ 权限大风险大，让 agent 做时在旁边看着。</li>
+      <li><b>办公自动化</b>：批量重命名、Excel 处理、定时抓数据——做成可复用脚本。</li>
+      <li><b>造产品</b>：写迷你网页 / 小游戏 / 小工具（你已验证的 web-games 路线就是 Vibe Coding）。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">3</span>和你已有的资产（强关联）</h2>
+    <div class="rel">
+      🔗 你的 <b>10 个 mini-app + 25+ mini-game</b> 全是 Vibe Coding 产物——你早就在这条路上，只是缺个名字。
+    </div>
+    <div class="rel">
+      🔗 与 <b>「Obsidian+Codex」卡</b> 同线：那张说"元宝零成本平替 Codex"，Vibe Coding 正是这种 agent 的典型用法——你已搭好 90% 本地 AI 工作台，现在直接拿来写代码。
+    </div>
+    <div class="rel">
+      🔗 与 <b>「一人公司 / 副业」</b> 主线一致：Vibe Coding 是零成本验证产品想法的引擎，契合"先验证再投入"。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">4</span>能不能挣钱</h2>
+    <div class="money">
+      <b>Vibe Coding 本身不直接挣钱</b>，它是"造产品的能力"。钱在两端：
+      <div class="grid" style="margin-top:10px">
+        <div class="mini"><b>卖结果（服务蓝海）</b><br>帮不懂代码的人做办公自动化 / C盘清理 / 小工具。视频里清个 C 盘市场价 <b>200 元</b>——卖铲子不卖苦力。</div>
+        <div class="mini"><b>卖产品（流量变现）</b><br>做垂直小工具 / 网页接广告、引流（你的 web-games + 知识星球已跑通）。</div>
+      </div>
+      <p style="margin-top:10px">🛡️ <b>护城河 = "人的生活直觉"</b>：纯技术活会被更便宜的模型卷死；用你对行业 / 人情 / 生活的理解做 AI 搜不到的差异化，才是普通人能挣钱的点（呼应巴菲特"复制条件不复制姿态"）。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">5</span>零成本上手 3 步</h2>
+    <div class="step"><b>第 1 步</b>：打开元宝（你已有的免费 agent），不用注册 OpenAI、不用花钱。</div>
+    <div class="step"><b>第 2 步</b>：用大白话描述一个小需求——"帮我写个批量重命名照片的脚本""做个猜数字小游戏网页"。</div>
+    <div class="step"><b>第 3 步</b>：让它跑、你看着改；能用的就沉淀成你的"造产品 SOP"，能卖的就包成服务 / 引流品。</div>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">6</span>灵感延伸（可立刻做）</h2>
+    <ul>
+      <li><b>① Vibe Coding 喂饭包引流星球</b>：像已发的「Obsidian 知识库模板」那样打包"零成本用元宝造小工具"，免费领 + 进阶付费（复用做3成果，零边际成本）。</li>
+      <li><b>② 下一个 mini-app 就用 Vibe Coding 造</b>：挑一个一直想做的小工具，元宝平替 Codex 实跑，沉淀 SOP。</li>
+      <li><b>③ 内容选题</b>：「普通人用 AI 造产品」是反直觉高互动选题（和"本地优先不被收割"同调性），可写系列引流。</li>
+      <li><b>④ "人的上下文"论作护城河框架</b>：任何 AI 内容创业都用"AI 搜不到的生活直觉"做差异化。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📂 知识库</h2>
+    <p style="font-size:14px">完整四问卡：<a href="categories/AI与方法/2026-08-09-VibeCoding普通人入坑.md">categories/AI与方法/2026-08-09-VibeCoding普通人入坑.md</a></p>
+    <p style="font-size:13px;color:#888;margin-top:6px">第 26 条 · 已登记 index.md · 四端同步（kb.html / GitHub / 腾讯文档）</p>
+  </div>
+
+  <div class="foot">由元宝蒸馏 · 抖音视频经 cookies 自动下载 + 中文 ASR 转写</div>
+</div>
+</body>
+</html>
