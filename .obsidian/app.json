@@ -1,0 +1,15 @@
+{
+  "cssTheme": "",
+  "baseFontSize": 16,
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "attachmentFolderPath": "assets",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "inbox",
+  "showViewHeader": true,
+  "translucentWindow": false,
+  "livePreview": true,
+  "isSafeMode": false,
+  "graph:save-extended": true
+}

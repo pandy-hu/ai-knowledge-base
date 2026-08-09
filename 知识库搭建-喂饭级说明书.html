@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识库搭建 · 喂饭级说明书</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f4f6fb; color: #1f2533; line-height: 1.7; padding: 16px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff; border-radius: 18px; padding: 26px 22px; margin-bottom: 18px;
+    box-shadow: 0 10px 30px rgba(79,70,229,.25);
+  }
+  .hero h1 { font-size: 22px; margin-bottom: 8px; }
+  .hero p { font-size: 14px; opacity: .95; }
+  .badge {
+    display: inline-block; background: rgba(255,255,255,.2); padding: 4px 12px;
+    border-radius: 999px; font-size: 13px; margin-top: 12px;
+  }
+  .card {
+    background: #fff; border-radius: 14px; padding: 18px 16px; margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  }
+  .card h2 { font-size: 17px; color: #4f46e5; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .card h2 .n { background: #4f46e5; color: #fff; width: 26px; height: 26px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; }
+  .step { background: #f8f9ff; border-left: 4px solid #7c3aed; border-radius: 8px; padding: 12px 14px; margin: 10px 0; }
+  .step b { color: #4f46e5; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 6px; }
+  th, td { border: 1px solid #e6e8f0; padding: 9px 8px; text-align: left; vertical-align: top; }
+  th { background: #f0f1fa; color: #4f46e5; font-weight: 600; }
+  td.ok { color: #16a34a; font-weight: 600; }
+  .tip { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 12px 14px; font-size: 14px; color: #9a3412; }
+  .warn { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 12px 14px; font-size: 14px; color: #b91c1c; }
+  .muted { color: #6b7280; font-size: 13px; }
+  ul { padding-left: 20px; }
+  li { margin: 5px 0; }
+  code { background: #eef0f7; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+  .footer { text-align: center; color: #9aa1b1; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>你的知识库 = 教程同款（Obsidian + AI）已搭好 90%</h1>
+    <p>抖音 @北清科技《喂饭级知识库教程》拆解：用本地 Obsidian 存 markdown + 一个可接任意模型的 AI 引擎。你现有的 <code>knowledge-base/</code> 就是这个思路的落地版，元宝就是零成本版 Codex。</p>
+    <span class="badge">📌 零成本启动 · 数据本地 · 不被大厂收割</span>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">📖</span>教程到底教了什么</h2>
+    <p class="muted">三大阶段，本质就是「采集 → 沉淀 → 复用」的闭环：</p>
+    <table>
+      <tr><th>阶段</th><th>教程做法</th></tr>
+      <tr><td><b>① 信息采集</b></td><td>把 GitHub 资讯项目丢给 AI → 每天自动抓热点、去重、打分、生成日报；浏览器装 clipper 一键收藏文章/视频字幕进库</td></tr>
+      <tr><td><b>② 知识管理</b></td><td>资料喂给 AI → 沉淀概念/经验/skill；定制「知识迭代系统」自动查冗余、查冲突、沉淀方法论</td></tr>
+      <tr><td><b>③ 完成任务</b></td><td>一句话让 AI 读本地文件干活（报告/PPT/图视频）；重复 SOP 做成 skill 随调；定时任务自动跑（如每晚整理飞书→日报→周报）</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">✅</span>对照表：教程 vs 你已有的</h2>
+    <table>
+      <tr><th>教程能力</th><th>你的现状</th><th>状态</th></tr>
+      <tr><td>Obsidian 本地 markdown 库</td><td><code>knowledge-base/</code> 全是 markdown，Obsidian 直接打开</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>AI 引擎读本地文件</td><td>元宝/WorkBuddy 直接读库、写卡、同步</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>知识管理/沉淀方法论</td><td>四问卡体系（24 张）+ 商业认知版图</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>skill 沉淀</td><td>video-distill / idea-capture / 红线检查器等 Skill</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>定时行业情报系统</td><td>每日 AI 机会简报自动化（每天 9 点）</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>多端可用</td><td>GitHub + 腾讯文档 + kb.html 手机版 + 微信文件传输助手</td><td class="ok">已有 ✅</td></tr>
+      <tr><td>知识迭代系统（查冗余/冲突）</td><td>可让元宝定期扫全库生成「待合并清单」</td><td class="ok">可加 ➕</td></tr>
+    </table>
+    <p class="muted" style="margin-top:8px">结论：工具链不同，骨架一模一样。你不用从零搭，只需「认出来 + 补足缺口」。</p>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">🚀</span>喂饭级 3 步上手</h2>
+    <div class="step">
+      <b>第 1 步 · 装 Obsidian 打开文件夹</b><br>
+      电脑装 <a href="https://obsidian.md">Obsidian</a>（免费）→ 打开按钮选「打开本地仓库」→ 指向 <code>knowledge-base/</code> 文件夹。24 张卡 + 商业拆解即刻可见，支持本地全文搜索、双向链接、图谱视图。
+    </div>
+    <div class="step">
+      <b>第 2 步 · 用元宝当 AI 引擎（零成本替代 Codex）</b><br>
+      教程里的 Codex 是 OpenAI 付费工具。你已经在用的「元宝 / WorkBuddy」就能读本地 markdown、蒸馏成卡、出文档、定时跑——<b>完全平替，不用花一分钱</b>。把链接/视频/截图丢给我即可。
+    </div>
+    <div class="step">
+      <b>第 3 步 · 日常循环</b><br>
+      刷到好内容 → 丢给元宝 → 自动蒸馏成四问卡 + 同步四端 → 重复 SOP 固化成 skill → 一句话调用。这就是教程说的「产出反哺知识库，复利增长」。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">🔧</span>工具对照（想原版可自行加）</h2>
+    <table>
+      <tr><th>教程工具</th><th>你的平替</th><th>费用</th></tr>
+      <tr><td>Obsidian</td><td>Obsidian（同款，直接装）</td><td>免费</td></tr>
+      <tr><td>Codex / Copilot 插件（接 API）</td><td>元宝 / WorkBuddy 当引擎</td><td>免费</td></tr>
+      <tr><td>GitHub 资讯项目（日报）</td><td>每日 AI 机会简报自动化</td><td>免费</td></tr>
+      <tr><td>clipper 收藏插件</td><td>直接把链接丢给元宝</td><td>免费</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2><span class="n">➕</span>可选增强（想更「自动化」再装）</h2>
+    <ul>
+      <li><b>Obsidian Copilot / Text Generator</b>：库内直接对话 AI、基于笔记生成内容。</li>
+      <li><b>QuickAdd + Templater</b>：一键按四问卡模板建新卡、自动填日期。</li>
+      <li><b>Dataview</b>：用查询自动生成「卡片索引表」，告别手动维护 index.md。</li>
+      <li><b>知识迭代 Skill</b>：让元宝定期扫全库，标记冗余/冲突、生成「待沉淀总卡」。</li>
+    </ul>
+    <p class="muted" style="margin-top:8px">这些都不是必须的——你现在的「元宝 + markdown 库」已经能跑通教程 90% 的能力。</p>
+  </div>
+
+  <div class="warn">
+    ⚠️ <b>风险提示</b>：教程演示的 Codex 是 OpenAI 的付费产品，需自备 API key、按量计费。对「零成本启动、不想踩坑」的你，<b>直接用元宝/WorkBuddy 平替即可</b>，不必注册、不必花钱，数据还更集中在本地。
+  </div>
+
+  <div class="card">
+    <h2><span class="n">💡</span>下一步你可以说</h2>
+    <ul>
+      <li>「帮我把 Obsidian 插件包（Copilot+QuickAdd+Templater）配好」</li>
+      <li>「做个知识迭代 Skill，定期查我库里冗余的卡」</li>
+      <li>「把这张教程卡 + 说明书打包成付费模板」</li>
+      <li>「写篇『大厂收割 → 本地优先』长文引流星球」</li>
+    </ul>
+  </div>
+
+  <p class="footer">由元宝（WorkBuddy）整理 · 对应卡片：categories/AI与方法/2026-08-09-Obsidian与Codex知识库搭建教程.md</p>
+</div>
+</body>
+</html>
