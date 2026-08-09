@@ -38,6 +38,13 @@
   .cta{background:var(--card);border:1px dashed var(--accent2);border-radius:14px;padding:15px;margin-top:5px;text-align:center}
   .cta .t{font-size:14.5px;color:var(--accent2);font-weight:700;margin-bottom:5px}
   .footer{color:var(--sub);font-size:11px;text-align:center;margin-top:15px;opacity:.7}
+  .ans{background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:8px 11px;margin:6px 0}
+  .ans .qn{font-size:13px;color:var(--txt);font-weight:700;margin-bottom:3px}
+  .ans .ua{font-size:12.5px;color:var(--warn);margin:2px 0}
+  .ans .fb{font-size:12.5px;color:var(--sub);margin-top:3px;line-height:1.5}
+  .ans .fb.ok{color:var(--ok)} .ans .fb.br{color:var(--accent2)}
+  .verdict{background:linear-gradient(135deg,#1e2747,#16203f);border:1px solid var(--accent2);border-radius:10px;padding:11px 14px;margin-top:10px;font-size:13px;color:var(--txt);line-height:1.65}
+  .verdict b{color:var(--accent2)}
   code{background:#0a0e1a;padding:1px 6px;border-radius:5px;color:var(--accent2);font-size:11.5px}
 </style>
 </head>
@@ -98,6 +105,39 @@
 </div>
 
 <div class="card">
+  <h2><span class="tag">你答</span>实跑答卷 + 死磕反馈</h2>
+  <div class="debate">
+    <div class="q2">你的 问2（争议地图实战判断）</div>
+    <div class="row ok">▸ stars 是信号，帮我最快筛选优质信息 ✓ 和正方一致</div>
+    <div class="row ok">▸ awesome list 是宝藏，年久失修先看最后更新时间 ✓ 你独立摸到了"边界"</div>
+    <div class="row ok">▸ trending 也看，但长期维护更重要 ✓ 和"学习用稳选"边界一致</div>
+    <div class="edge">结论：争议地图你基本全中——说明你真懂"怎么判断项目好坏"的框架。</div>
+  </div>
+
+  <div class="ans"><div class="qn">Q1 写语法筛"近一年更新、stars>5000、Python"？</div><div class="ua">你：不能，不会语法</div><div class="fb ok">✓ 对你不是短板。非程序员正确姿势：把需求用大白话说给我（"元宝，帮我找近一年更新、star过5000的Python老照片修复项目"），我来写语法+筛。你的真懂=「能说清筛选条件」，不是「会写语法」。记住3个词就够：<code>stars</code> / <code>pushed:>日期</code> / <code>language:</code>，其余交给我。</div></div>
+
+  <div class="ans"><div class="qn">Q2 stars 高但半年没 push，排除还是看原因？</div><div class="ua">你：半年没 push 就不用看了，AI 发展快，半年不维护=过时</div><div class="fb ok">✓ 精准！这正是内行判断。补一刀：别只看"有没有 push"，再看 ①最近一次 release 版本 ②issue 里作者还回不回 ③commit 是不是刷格式。三项里两项还活，就值得看。</div></div>
+
+  <div class="ans"><div class="qn">Q3 拿到高星项目第一步做啥？</div><div class="ua">你：先读 README，了解做什么/怎么用/对我有没有帮助</div><div class="fb ok">✓ 满分。README 就是你和项目的"第一次对话"：它解决什么问题、怎么装、怎么用、适不适合你，全在里面。非程序员靠 README+截图+示例就能判断 80%，不用碰代码。</div></div>
+
+  <div class="ans"><div class="qn">Q4 awesome list 和具体业务 repo 何时用哪个？</div><div class="ua">你：不太清楚</div><div class="fb br">补：① awesome list = <b>菜单/导航</b>（一个领域的好东西汇总，用来"找方向、找灵感"，如 awesome-python）② 具体业务 repo = <b>一道菜</b>（能直接 clone 跑的工具/产品）。用法：先用 awesome list 广撒网找方向 → 锁定后跳到具体 repo 深挖。别把"菜单"当"菜"吃（呼应思维模型⑤）。</div></div>
+
+  <div class="ans"><div class="qn">Q5 fork 远高于 star 说明什么？</div><div class="ua">你：star 多=很多人喜欢/感兴趣，fork 数才是真被多少人用起来</div><div class="fb ok">✓ 很内行的洞察！补：对你最有用的其实是 <b>"Used by" 标签</b>（谁在拿它当零件依赖）+ 近期活跃度，比裸 star 数实在。</div></div>
+
+  <div class="ans"><div class="qn">Q6 用 topics/搜索拼出 3 个可学 repo？</div><div class="ua">你：不会</div><div class="fb br">交给我。你只要说"我想学 AI agent"，我就能用 <code>topic:ai-agent stars:>3000 pushed:>2025-01-01</code> 拼出 3 个可学 repo。你的真懂=「知道 GitHub 能按主题找同类」这个意识，具体拼法我来。</div></div>
+
+  <div class="ans"><div class="qn">Q7 抄别人代码前能说清为什么这么写吗？</div><div class="ua">你：不能，不懂代码也不想懂，有 AI 辅助</div><div class="fb br">诚实且合理。边界：你不必读源码，但<b>用别人项目前让元宝先讲清"它大概怎么工作、能干嘛、坑在哪"</b>，再决定抄不抄。这是非程序员的"读源码"平替。</div></div>
+
+  <div class="ans"><div class="qn">Q8 issue 一堆未回复 bug 还敢用吗？</div><div class="ua">你：看情况解决</div><div class="fb ok">✓ 这其实是最对的元回答。给个 rubric：① bug 是否影响你用的功能 ② 有没有人给了 workaround ③ 项目是否还活（回 Q2）。三条都坏→换一个；只坏一条→记下来绕开。</div></div>
+
+  <div class="ans"><div class="qn">Q9 找 good first issue 项目？</div><div class="ua">你：不知道</div><div class="fb br">对你优先级最低（你是使用者不是贡献者）。一句话：GitHub 搜 <code>label:"good first issue" state:open</code> 能找新手友好项目，但你的路线是"用"不是"贡献"，跳过无妨。</div></div>
+
+  <div class="ans"><div class="qn">Q10 有需求能反查 GitHub 现成方案吗？</div><div class="ua">你：不知道</div><div class="fb ok">✓ <b>这是对你最值钱的一题！</b>以后有需求（如"给知识库加搜索""一键转精美网页"），别自己造，先说"元宝，GitHub 上有没有现成方案"。我直接反查+3问筛出能立刻用的。你的真懂=「有需求先想'有没有现成的'」这个习惯。</div></div>
+
+  <div class="verdict">🎯 <b>过关判定</b>：问2（争议地图）你基本全中，说明真懂"项目好坏判断框架"。问3 十题里，你答对的（Q2 活性判断 / Q3 读 README / Q5 星fork信号）恰是<b>非程序员最该会的 3 题</b>。卡壳的（Q1/Q4/Q6/Q9）多是语法/代码细节，本就该交给元宝——所以你离"真懂"只差一个习惯：<b>有需求先丢给我反查</b>。</div>
+</div>
+
+<div class="card">
   <h2><span class="tag">应用</span>5 种姿势（结合你一人公司）</h2>
   <div class="use"><b>1. 克隆跑当工具</b>：video-downloader、zsxq-cli 你已在用——找到即生产力。</div>
   <div class="use"><b>2. 读源码学</b>：看同类 mini-app 学前端，反哺你 35 个作品。</div>
@@ -111,7 +151,7 @@
   <p style="color:var(--sub);font-size:13px">回复：<span class="hl">「反查：你的具体需求」</span><br>例：「反查：给知识库加全文搜索」/「反查：一键把markdown转精美网页」<br>我直接用搜索语法+3问帮你筛出可立刻用的高星项目。</p>
 </div>
 
-<div class="footer">卡29 已入知识库并同步四端 · 这是麻省理工学习法的第一次实跑示范</div>
+<div class="footer">卡29 已入知识库并同步四端 · 你的实跑答卷已回写本报告与卡片 · 麻省理工学习法第一次实跑示范</div>
 
 </body>
 </html>
