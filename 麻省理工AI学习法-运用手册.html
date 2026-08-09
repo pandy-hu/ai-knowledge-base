@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻省理工 AI 学习法 · 你的运用手册</title>
+<style>
+  :root{
+    --bg:#0f1226; --card:#1a1f3c; --card2:#222a52; --txt:#e8ebff; --sub:#a6adcf;
+    --accent:#7c8cff; --accent2:#56d6c4; --warn:#ffb454; --ok:#5be39a; --line:#2c3566;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding:18px;max-width:760px;margin:0 auto}
+  h1{font-size:23px;margin-bottom:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--sub);font-size:13px;margin-bottom:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+  .card h2{font-size:17px;margin-bottom:10px;color:var(--accent)}
+  .card h2 .tag{font-size:11px;background:var(--accent);color:#0f1226;padding:2px 8px;border-radius:20px;margin-right:8px;vertical-align:middle}
+  .q{font-size:15px;color:var(--txt);margin:10px 0 4px;font-weight:600}
+  .q .n{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:var(--accent2);color:#0f1226;border-radius:50%;font-size:12px;margin-right:8px}
+  p,li{font-size:14px;color:var(--sub)}
+  ul{margin:6px 0 6px 4px;padding-left:18px}
+  li{margin:4px 0}
+  .hl{color:var(--txt);font-weight:600}
+  .ok{color:var(--ok)} .warn{color:var(--warn)} .br{color:var(--accent2)}
+  .step{display:flex;gap:10px;align-items:flex-start;margin:9px 0}
+  .step .num{flex:0 0 26px;height:26px;line-height:26px;text-align:center;background:var(--card2);border:1px solid var(--line);border-radius:8px;color:var(--accent);font-weight:700;font-size:13px}
+  .step .body{font-size:14px;color:var(--sub)}
+  .box{background:var(--card2);border-left:3px solid var(--accent);border-radius:8px;padding:10px 13px;margin:10px 0;font-size:13px;color:var(--sub)}
+  .verdict{background:linear-gradient(135deg,#1d2b4d,#21356b);border:1px solid var(--accent);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+  .verdict .big{font-size:19px;color:var(--ok);font-weight:800;margin-bottom:6px}
+  .cta{background:var(--card);border:1px dashed var(--accent2);border-radius:14px;padding:16px;margin-top:6px;text-align:center}
+  .cta .t{font-size:15px;color:var(--accent2);font-weight:700;margin-bottom:6px}
+  .footer{color:var(--sub);font-size:11px;text-align:center;margin-top:16px;opacity:.7}
+  code{background:#0c0f22;padding:1px 6px;border-radius:5px;color:var(--accent2);font-size:12px}
+</style>
+</head>
+<body>
+
+<h1>麻省理工 AI 学习法 · 你的运用手册</h1>
+<div class="sub">不是"怎么学"，是"怎么让 AI 当你的严师，48 小时啃完陌生领域" —— 结合你的一人公司 + 零成本 + 知识库</div>
+
+<div class="verdict">
+  <div class="big">✅ 对你极有用，而且你已经在用了</div>
+  <p>你每次让我"蒸馏成四问卡"，本质就是这套方法的变体——"怎么用 / 和之前关系 / 能不能挣钱 / 灵感" ≈ 麻省理工 3 问里的「要思维模型」+「真懂检测器」。你早就在用，只是没命名。这套方法补你<span class="hl">两处盲区</span>：① 不只问"怎么用"，还问<span class="br">"这个领域争得最凶的是什么"</span>（争议地图）；② 不只收藏，还设<span class="br">"真懂检测器"</span>逼自己答、答不出死磕。</p>
+</div>
+
+<div class="card">
+  <h2><span class="tag">为什么</span>对你特别有用（3 条）</h2>
+  <ul>
+    <li><span class="hl">你不需要系统啃教材</span>：编程小白、时间碎片化都不怕。把资料甩给 AI，问 3 问，直接拿"思维模型 + 争议 + 检测器"，跳过你最不擅长的"从零啃书"。</li>
+    <li><span class="hl">直接服务找副业 / 信息差</span>：你想进一个新赛道（闪电仓、多肉寄养、老照片修复…），用这套法 48 小时就能判断"这活儿能不能做、坑在哪"，比刷 100 条短视频强。</li>
+    <li><span class="hl">和你工具链零成本咬合</span>：<code>video-downloader</code> 转写视频 → 喂 AI 3 问 →  distill 成四问卡进库 → 同步四端。你已有全部零件，只差"用 3 问提问"这一步。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2><span class="tag">场景A</span>掌握一本书（喂饭步骤）</h2>
+  <div class="step"><div class="num">1</div><div class="body"><span class="hl">备资料</span>：书不方便整本喂，就喂「目录 + 你划线的章节 + 网上这本书的精华笔记/书评」。想更狠：让我用公开资料帮你重建书的骨架。</div></div>
+  <div class="step"><div class="num">2</div><div class="body"><span class="hl">发我 3 问</span>：「把这本书当资料，回答：① 作者最核心的 5 个思维模型 ② 书和主流观点争得最凶的 3 处 ③ 给我 10 个'真读懂了没'的检测题」。</div></div>
+  <div class="step"><div class="num">3</div><div class="body"><span class="hl">答检测器 + 进库</span>：你试着答那 10 题，答不出的让我展开死磕；最后 distill 成一张「一书一卡」存进知识库。</div></div>
+  <div class="box">💡 示例：想掌握《纳瓦尔宝典》→ 把书名+几段你喜欢的金句发我，我直接走 3 问，半小时给你"财富/幸福"两套思维模型 + 争议点 + 检测题，你答完即"掌握"。</div>
+</div>
+
+<div class="card">
+  <h2><span class="tag">场景B</span>学一个新知识 / 新赛道</h2>
+  <div class="step"><div class="num">1</div><div class="body"><span class="hl">扒资料</span>：用每日简报 / 抖音链接 / 知乎回答 / 行业报告，凑齐这个主题的 5~10 份材料（视频可先转写）。</div></div>
+  <div class="step"><div class="num">2</div><div class="body"><span class="hl">问 3 问</span>：① 这个赛道高手的 5 个核心判断模型 ② 圈内争得最凶的 3 个问题（比如"闪电仓到底赚不赚钱"）③ 10 个检测题测我懂没懂。</div></div>
+  <div class="step"><div class="num">3</div><div class="body"><span class="hl">出"能不能做"结论</span>：把 3 问答案 distill 成四问卡（含"能不能挣钱"），直接变成你的副业决策依据。</div></div>
+  <div class="box">💡 你已经做过同款：拆「淘宝便利店仓位战 / 多肉寄养」本质就是这套法的实战版——以后每拆一个，主动让我补"争议地图 + 真懂检测器"两栏，质量翻倍。</div>
+</div>
+
+<div class="card">
+  <h2><span class="tag">雷区</span>3 个坑（别踩）</h2>
+  <ul>
+    <li><span class="warn">⚠ 别全信 AI 的"思维模型"</span>：AI 会给看起来权威但空洞的模型。用你卡27说的"人的生活直觉"去验——和人味冲突的，打个问号（呼应"复制条件不复制姿态"）。</li>
+    <li><span class="warn">⚠ 检测器要自己答</span>：10 道题让 AI 代答就废了。你答、答不出再让 AI 展开，才是"真懂"。</li>
+    <li><span class="warn">⚠ 别又摊大饼</span>：一次只啃一个主题（单点突破法），别同时喂 5 本书问 3 问，那样只是换了种方式收藏。</li>
+  </ul>
+</div>
+
+<div class="cta">
+  <div class="t">现在就实跑一遍？</div>
+  <p style="color:var(--sub);font-size:13px">回复我：<span class="hl">「实跑：书名/想学的领域」</span><br>我立刻带你走完 3 问 + 蒸馏成卡，进你知识库同步四端。<br>比如：实跑《纳瓦尔宝典》 / 实跑"怎么用 AI 做老照片修复客服"</p>
+</div>
+
+<div class="footer">模板已固化：entry-template.md 顶部已写入 3 神级问题提示，今后每张卡自动更狠 · 2026-08-09</div>
+
+</body>
+</html>
