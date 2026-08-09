@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实跑 · GitHub 找高星项目并应用</title>
+<style>
+  :root{
+    --bg:#0e1320; --card:#161d33; --card2:#1e2747; --txt:#e9edff; --sub:#a4acd0;
+    --accent:#7c8cff; --accent2:#56d6c4; --warn:#ffb454; --ok:#5be39a; --pink:#ff7eb6; --line:#2a3360;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.7;padding:18px;max-width:780px;margin:0 auto}
+  h1{font-size:22px;margin-bottom:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--sub);font-size:13px;margin-bottom:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:13px}
+  .card h2{font-size:16px;margin-bottom:10px;color:var(--accent)}
+  .card h2 .tag{font-size:11px;background:var(--accent);color:#0e1320;padding:2px 8px;border-radius:20px;margin-right:8px;vertical-align:middle}
+  .q{font-size:14.5px;color:var(--txt);margin:9px 0 4px;font-weight:700}
+  .q .n{display:inline-block;width:21px;height:21px;line-height:21px;text-align:center;background:var(--accent2);color:#0e1320;border-radius:50%;font-size:12px;margin-right:7px}
+  p,li{font-size:13.5px;color:var(--sub)}
+  ul{margin:5px 0 5px 4px;padding-left:17px} li{margin:4px 0}
+  .hl{color:var(--txt);font-weight:600} .ok{color:var(--ok)} .warn{color:var(--warn)} .br{color:var(--accent2)} .pk{color:var(--pink)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:6px}
+  .m{grid-column:span 1;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:9px 11px}
+  .m .t{color:var(--accent2);font-weight:700;font-size:13px;margin-bottom:3px}
+  .m .d{font-size:12px;color:var(--sub);line-height:1.5}
+  .debate{background:var(--card2);border-left:3px solid var(--warn);border-radius:8px;padding:9px 12px;margin:8px 0}
+  .debate .q2{font-size:13.5px;color:var(--txt);font-weight:700;margin-bottom:4px}
+  .debate .row{font-size:12.5px;margin:3px 0}
+  .debate .edge{font-size:12px;color:var(--accent2);margin-top:4px;font-style:italic}
+  .test{display:flex;gap:9px;align-items:flex-start;background:var(--card2);border:1px solid var(--line);border-radius:9px;padding:8px 11px;margin:6px 0}
+  .test .box{flex:0 0 18px;height:18px;border:2px solid var(--accent);border-radius:5px;margin-top:2px}
+  .test .body{font-size:13px;color:var(--sub)}
+  .test .body b{color:var(--txt)}
+  .use{background:var(--card2);border-radius:9px;padding:9px 12px;margin:6px 0;border-left:3px solid var(--accent)}
+  .src{font-size:12px;color:var(--sub);background:var(--card2);border-radius:8px;padding:8px 11px;margin:6px 0}
+  .cta{background:var(--card);border:1px dashed var(--accent2);border-radius:14px;padding:15px;margin-top:5px;text-align:center}
+  .cta .t{font-size:14.5px;color:var(--accent2);font-weight:700;margin-bottom:5px}
+  .footer{color:var(--sub);font-size:11px;text-align:center;margin-top:15px;opacity:.7}
+  code{background:#0a0e1a;padding:1px 6px;border-radius:5px;color:var(--accent2);font-size:11.5px}
+</style>
+</head>
+<body>
+
+<h1>实跑报告 · GitHub 找高星项目并应用</h1>
+<div class="sub">麻省理工 AI 学习法 3 问落地 · 2026-08-09 · 第 29 张四问卡（技术与工具）</div>
+
+<div class="src">📚 <b>资料</b>：GitHub 官方文档（Explore/Search/Stars/Following）+ 高级搜索语法 + Awesome Lists + Trending + Copilot Chat 找项目 + CSDN 实战教程（"别只看 stars 看项目类型"）。</div>
+
+<div class="card">
+  <h2><span class="tag">问1</span>5 个核心思维模型</h2>
+  <div class="grid">
+    <div class="m"><div class="t">① 目的先行</div><div class="d">先定"学/用/抄/贡献"哪种目的再选筛法。学代码 <code>stars:>1000 language:Java</code>；找资料 <code>awesome stars:>10000</code>。</div></div>
+    <div class="m"><div class="t">② 信号分层</div><div class="d">stars=广度关注(初筛)；forks/近期commit/issue响应=深度健康。多维交叉，不盯单点。</div></div>
+    <div class="m"><div class="t">③ 入口分级</div><div class="d">Explore/Trending(广撒网)→topics/awesome(深挖)→搜索语法(狙击)→Copilot/关注的人(推荐)。</div></div>
+    <div class="m"><div class="t">④ 活性优先</div><div class="d"><code>pushed:>2024-01-01</code> 且近期commit > 高star但停更老项目（资料合集常刷星不维护）。</div></div>
+    <div class="m"><div class="t">⑤ 抄-读-改递进</div><div class="d">clone跑→读核心源码→fork改适配。不懂不抄，避免把"awesome合集当业务系统"。</div></div>
+    <div class="m"><div class="t">🔗 与你7-26卡互补</div><div class="d">你已有《GitHub挖宝指南》入门卡，本卡是用学习法深啃的升级版。</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="tag">问2</span>争得最凶的 3 个争议（地图）</h2>
+  <div class="debate">
+    <div class="q2">1. stars 是信号还是虚荣指标？</div>
+    <div class="row br">▸ 正方：社区快速验证、筛垃圾的最低成本信号。</div>
+    <div class="row pk">▸ 反方：可刷量、跟风、资料合集刷星≠代码质量。</div>
+    <div class="edge">边界：stars 只作初筛，必须配 forks / recency 交叉验证。</div>
+  </div>
+  <div class="debate">
+    <div class="q2">2. Awesome List 是宝藏还是堆砌？</div>
+    <div class="row br">▸ 正方：社区长期维护、分类精、质量普遍高。</div>
+    <div class="row pk">▸ 反方：很多年久失修、收录标准松、链接失效。</div>
+    <div class="edge">边界：看 list 最后更新 + 是否带评注，别无脑照抄。</div>
+  </div>
+  <div class="debate">
+    <div class="q2">3. 追 Trending 蹭新 vs 稳选维护中？</div>
+    <div class="row br">▸ 正方：追新学前沿、抓早期信息差。</div>
+    <div class="row pk">▸ 反方：新手应挑长期维护、文档全的项目降学习成本。</div>
+    <div class="edge">边界：学习用稳选，灵感/信息差用追新。</div>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="tag">问3</span>10 个真懂检测器（自测，答不出死磕）</h2>
+  <div class="test"><div class="box"></div><div class="body"><b>1.</b> 能写一句语法筛"近一年更新、stars>5000、Python"的项目吗？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>2.</b> stars 高但半年没 push，你会直接排除还是看原因？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>3.</b> 拿到高星项目，第一步是 clone 跑 / 读 README / 看结构？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>4.</b> awesome list 和具体业务 repo，何时用哪个清楚吗？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>5.</b> fork 数远高于 stars 说明什么？怎么用这信号？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>6.</b> 想学"AI agent"，能用 topics/搜索拼出 3 个可学 repo 吗？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>7.</b> 抄别人代码前，能说出抄的那段"为什么这么写"吗？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>8.</b> issue 里一堆未回复 bug，还敢用吗？判断标准？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>9.</b> 知道怎么找"欢迎首次贡献"的 good first issue 项目吗？</div></div>
+  <div class="test"><div class="box"></div><div class="body"><b>10.</b> 有需求（如"给知识库加搜索"），能反查 GitHub 现成方案吗？</div></div>
+  <p style="margin-top:8px;font-size:12px" class="warn">⚠ 你答、答不出让我展开——这才是"真懂"。10 题能答 7+ 即过关。</p>
+</div>
+
+<div class="card">
+  <h2><span class="tag">应用</span>5 种姿势（结合你一人公司）</h2>
+  <div class="use"><b>1. 克隆跑当工具</b>：video-downloader、zsxq-cli 你已在用——找到即生产力。</div>
+  <div class="use"><b>2. 读源码学</b>：看同类 mini-app 学前端，反哺你 35 个作品。</div>
+  <div class="use"><b>3. fork 改适配</b>：开源脚手架改成自己产品（web-games 模板即此类）。</div>
+  <div class="use"><b>4. 提取单模块</b>：把某项目单个能力（ASR/zip/爬虫）嵌进工作流。</div>
+  <div class="use"><b>5. 当灵感源</b>：awesome lists 找副业灵感；GitHub Pages 直接部署（web-games 已验证）。</div>
+</div>
+
+<div class="cta">
+  <div class="t">下一步：挑一个真实需求，让我带反查</div>
+  <p style="color:var(--sub);font-size:13px">回复：<span class="hl">「反查：你的具体需求」</span><br>例：「反查：给知识库加全文搜索」/「反查：一键把markdown转精美网页」<br>我直接用搜索语法+3问帮你筛出可立刻用的高星项目。</p>
+</div>
+
+<div class="footer">卡29 已入知识库并同步四端 · 这是麻省理工学习法的第一次实跑示范</div>
+
+</body>
+</html>
