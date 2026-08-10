@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>反洗钱陷阱防范 · 拆解</title>
+<style>
+  :root{
+    --bg:#faf7f5; --card:#ffffff; --ink:#2a1f1a; --sub:#7a6a60;
+    --warn:#e8543b; --warn2:#f5a623; --ok:#1aa260; --line:#f0e6df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;padding:16px;max-width:640px;margin:0 auto}
+  .hero{background:linear-gradient(135deg,#e8543b,#f5a623);color:#fff;border-radius:18px;padding:22px 20px;margin-bottom:14px}
+  .hero h1{font-size:21px;font-weight:800}
+  .hero .src{font-size:12px;opacity:.92;margin-top:8px}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 10px;font-size:11px;margin-top:10px}
+  .alert{background:#fff5f2;border:1px solid #ffd6cc;border-radius:12px;padding:12px 14px;font-size:13px;color:#a8331a;margin-bottom:14px}
+  .alert b{color:var(--warn)}
+  .sec{background:var(--card);border-radius:16px;padding:18px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .sec h2{font-size:16px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .sec h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--warn)}
+  .core{background:var(--card);border-radius:16px;padding:18px;margin-bottom:14px;border-left:5px solid var(--warn);box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .flow{display:flex;gap:6px;align-items:stretch;margin-bottom:6px}
+  .flow .step{flex:1;background:#fff5f2;border-radius:10px;padding:10px 6px;text-align:center;font-size:12px}
+  .flow .step b{display:block;font-size:14px;color:var(--warn);margin-bottom:2px}
+  .flow .arr{align-self:center;color:var(--warn);font-weight:800}
+  .ch{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ch div{background:#faf6f3;border-radius:10px;padding:10px;font-size:12px}
+  .ch div b{color:var(--warn);font-size:13px}
+  .red{background:#fff0eb;border:1px solid #ffc4b3;border-radius:12px;padding:14px;margin-bottom:10px}
+  .red h3{color:var(--warn);font-size:14px;margin-bottom:8px}
+  .red ul{margin-left:18px} .red li{margin:4px 0;font-size:13px}
+  .sig{font-size:13px;color:var(--sub)}
+  .sig li{margin:4px 0 4px 18px}
+  .sig li b{color:var(--warn)}
+  .no{background:#effaf3;border:1px solid #cdeed8;border-radius:12px;padding:14px;font-size:13px;color:#1a6b3f}
+  .no b{color:var(--ok)}
+  .cta{text-align:center;font-size:12px;color:var(--sub);padding:16px;border-top:1px dashed var(--line);margin-top:6px}
+  .cta b{color:var(--warn)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🚨 反洗钱陷阱防范</h1>
+  <div class="src">来源：抖音《挂彩票、招兼职，洗钱手法有多离谱？反洗钱与防范洗钱》</div>
+  <div class="tag">个人成长 · 风险警示 · 变现潜力 低</div>
+</div>
+
+<div class="alert">
+  <b>⚠️ 防范视角，不是教程。</b>本卡只做原理科普 + 识别特征，价值在「不亏、不进去」。看到「高价收你资产 / 招你代收兼职」先警觉。
+</div>
+
+<div class="core">
+  <b>一句话核心：</b>有人 800 万买你 500 万彩票、招你「代收代转兼职」——本质都是拉你当洗钱通道。普通人防洗钱不是去学手法，而是守住「不出借账户、不代收不明资金、不接异常高溢价交易」三条红线。
+</div>
+
+<div class="sec">
+  <h2><span class="dot"></span>洗钱三段式（思维模型）</h2>
+  <div class="flow">
+    <div class="step"><b>① 放置</b>黑钱入渠</div>
+    <div class="arr">→</div>
+    <div class="step"><b>② 分层</b>多层转账切断追溯</div>
+    <div class="arr">→</div>
+    <div class="step"><b>③ 整合</b>洗白回流成「合法」资产</div>
+  </div>
+  <p style="font-size:12px;color:var(--sub);margin-top:6px">本质：切断资金与上游犯罪的追溯链，让赃款看起来像合法收入。</p>
+</div>
+
+<div class="sec">
+  <h2><span class="dot"></span>常见洗钱渠道（识别特征）</h2>
+  <div class="ch">
+    <div><b>🎰 彩票</b><br>高价收购中奖券/买一箱刮刮乐</div>
+    <div><b>🃏 赌场</b><br>赃款换筹码再换回账户</div>
+    <div><b>🖼️ 艺术品/古董</b><br>难估值+跨境+可当礼物</div>
+    <div><b>💎 奢侈品/黄金</b><br>随身带+全球变现+黄金熔融无追溯</div>
+    <div><b>🏢 空壳公司</b><br>瑞士银行+跨境多层</div>
+    <div><b>📊 期货对冲</b><br>一多一空，赚的那边变合法</div>
+  </div>
+  <p style="font-size:12px;color:var(--sub);margin-top:8px">⚠️ 彩票/赌场已纳入反洗钱监管，短时密集兑奖/大额换筹码/消极赌博都会被查。</p>
+</div>
+
+<div class="sec">
+  <h2><span class="dot"></span>守三条红线（最重要）</h2>
+  <div class="red">
+    <h3>🛑 三条红线，绝不碰</h3>
+    <ul>
+      <li><b>不出借账户</b>：银行卡/收款码不借他人走账</li>
+      <li><b>不代收不明资金</b>：不替人收钱再转出（哪怕给提成=跑分=帮信罪）</li>
+      <li><b>不接异常高溢价</b>：远超市价收购你资产的交易，99% 是洗钱</li>
+    </ul>
+  </div>
+  <ul class="sig">
+    <li><b>陷阱信号</b>：高价收你中奖彩票/刮刮乐</li>
+    <li><b>陷阱信号</b>：招你「兼职帮忙刮卡/转账/代收」</li>
+    <li><b>陷阱信号</b>：超高溢价收你二手奢侈品古董</li>
+    <li><b>陷阱信号</b>：让你「用你账户走账给提成」</li>
+  </ul>
+</div>
+
+<div class="sec">
+  <h2><span class="dot"></span>能不能帮你挣钱？</h2>
+  <div class="no">
+    <b>不能。</b>这是犯罪。本卡是警示卡，价值不在赚钱，在「不亏、不进去」。<br>
+    <b>反向价值</b>：反诈科普内容有流量（契合简报/星球选题），但绝不能写成「洗钱教程」，只能写「识别+防范」。
+  </div>
+</div>
+
+<div class="sec">
+  <h2><span class="dot"></span>灵感延伸</h2>
+  <ul class="sig">
+    <li>副业红线检查器补「跑分/代收/高溢价收购」三类红线词</li>
+    <li>做「副业避坑清单」系列：撸保证金/跑分/多肉寄养/便利店，聚合所有反例卡</li>
+  </ul>
+</div>
+
+<div class="cta">📌 由 <b>video-distill 一键流水线</b> 生成 · 完整四问卡见 <b>categories/个人成长/2026-08-10-反洗钱陷阱防范.md</b></div>
+
+</body>
+</html>
