@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WinClaw 灵犀文脉 · 本地 AI 知识库拆解</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#f4f7fb;color:#1f2a37;line-height:1.7;padding:16px}
+  .wrap{max-width:680px;margin:0 auto}
+  h1{font-size:23px;color:#0b5cad;margin-bottom:4px}
+  .sub{color:#6b7785;font-size:13px;margin-bottom:18px}
+  .card{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 10px rgba(20,60,120,.06)}
+  .tag{display:inline-block;background:#e6f1fd;color:#0b5cad;font-size:12px;padding:2px 9px;border-radius:20px;margin:0 4px 6px 0}
+  h2{font-size:17px;color:#0b5cad;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+  h2::before{content:"";width:4px;height:17px;background:#0b5cad;border-radius:3px}
+  p{margin:6px 0;font-size:14.5px}
+  .hi{background:#fff6e0;padding:2px 5px;border-radius:5px;color:#9a6300}
+  ul{margin:6px 0 6px 4px;list-style:none}
+  li{font-size:14.5px;padding-left:18px;position:relative;margin:5px 0}
+  li::before{content:"▹";position:absolute;left:0;color:#0b5cad}
+  .box{background:#f0f6ff;border-left:4px solid #0b5cad;padding:10px 12px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px}
+  .warn{background:#fff1f0;border-left:4px solid #e23a2e;padding:10px 12px;border-radius:0 8px 8px 0;margin:8px 0;font-size:13.5px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mini{background:#f7fafd;border:1px solid #e3ecf6;border-radius:10px;padding:11px;font-size:13px}
+  .mini b{color:#0b5cad;display:block;margin-bottom:3px}
+  .step{display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+  .step .n{flex:0 0 26px;height:26px;background:#0b5cad;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+  .foot{text-align:center;color:#9aa6b2;font-size:12px;margin-top:10px}
+  .cta{background:#0b5cad;color:#fff;text-align:center;border-radius:12px;padding:14px;font-size:14px;margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>WinClaw 灵犀文脉：一键把电脑变本地 AI 知识库</h1>
+  <div class="sub">抖音教程拆解 · 2026-08-10 · 分类：技术与工具 · 关联度 高 / 变现 中</div>
+  <div>
+    <span class="tag">#WinClaw</span><span class="tag">#本地知识库</span><span class="tag">#语义检索</span>
+    <span class="tag">#第二大脑</span><span class="tag">#与你知识库同赛道</span>
+  </div>
+
+  <div class="card">
+    <h2>一句话核心</h2>
+    <p>WinClaw（灵犀文脉）是桌面 <span class="hi">AI 智能体平台</span>：一键扫描本地文件 → 建向量索引+知识图谱 → 用<b>语义模糊检索</b>替代 Everything 的「精确文件名」查找，还能微信远程调文件、自动生成文档图谱和数字分身，<b>所有数据存本地不上传</b>。对你，它是「个人第二大脑」现成方案，和你正在做的知识库项目同一条赛道。</p>
+  </div>
+
+  <div class="card">
+    <h2>它比 Everything 强在哪（三阶段流水线）</h2>
+    <div class="step"><div class="n">1</div><div><b>扫描本地文件</b>：Word/Excel/PPT/PDF 等，演示扫出 433 个资料文件（数据全留本地）</div></div>
+    <div class="step"><div class="n">2</div><div><b>读取文档内容</b>：不只看文件名，读正文</div></div>
+    <div class="step"><div class="n">3</div><div><b>建向量索引 + 抽知识图谱</b>：支持语义模糊匹配，忘了专业术语也能搜到</div></div>
+    <div class="box">演示：只记得「不登录网页也能识别是不是同一个人」→ 搜出自己写的《浏览器指纹是什么》一文，关键词正文里根本没出现，靠<b>向量语义匹配</b>命中。</div>
+  </div>
+
+  <div class="card">
+    <h2>4 个亮点功能</h2>
+    <div class="grid">
+      <div class="mini"><b>语义智能检索</b>跨多文档复杂推理：自动拆任务→多路检索→读文档→总结输出指南</div>
+      <div class="mini"><b>微信远程调文件</b>出门没电脑，手机发指令→WinClaw 定位 PPT→微信发回，半分钟搞定</div>
+      <div class="mini"><b>文档图谱</b>抽实体关系，发现隐藏关联（如多个 AI 工具都依赖 Node.js）</div>
+      <div class="mini"><b>数字分身</b>按每日工作自动记录，AI 总结你的职业经历/习惯，越用越懂你</div>
+    </div>
+    <div class="box"><b>主动逻辑创新</b>：从「人找事/被动问答」进化成「事找人/主动推荐任务」——AI 看你近期改过的文档，直接列出今天该做的活。</div>
+  </div>
+
+  <div class="card">
+    <h2>对你（一人公司/副业）怎么用</h2>
+    <ul>
+      <li>当「<b>不会写代码的本地知识库</b>」平替：你现有 <span class="hi">knowledge-base/</span> 是手管 Markdown，WinClaw 是「全盘自动语义化」自动化版，互补——库用 WinClaw 索引备份，核心卡仍走四问卡模板。</li>
+      <li>三阶段跑通自己：装 → 只授权知识库/文档目录（<b>别开系统盘</b>）→ 用语义检索验证一句「忘了术语只记得大概」的需求。</li>
+      <li>微信远程调文件补足你「手机看知识库」习惯：出门也能取卡片/简报。</li>
+      <li>video-distill 蒸馏出的卡存本地后，用 WinClaw 秒定位「之前那张讲 XX 的卡」。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>赚钱机会（潜力中）</h2>
+    <ul>
+      <li><b>降本</b>：资料/卡全盘语义化，写简报/蒸馏检索提速=给「元宝=虚拟员工」加本地记忆层。</li>
+      <li><b>内容/带货</b>：「超越 Everything 的本地 AI 知识库」是强选题，可做测评/横评（vs Obsidian/Cherry Studio）引流星球。<span class="hi">别写软广，走实测+客观对比才立得住</span>。</li>
+    </ul>
+  </div>
+
+  <div class="warn">
+    <b>⚠ 安全提醒（视频亲测）</b><br>
+    ① 微信远程调文件=把本地文件暴露到 IM 通道，务必配目录授权；<br>
+    ② 装<b>第三方 skill 前先查提示词</b>——演示中恶意 skill 偷手机号发黑客服务器，WinClaw 能弹窗拦截，但前提是开着它跑；<br>
+    ③ 五重防护（身份认证/安装审查/消息拦截/执行约束/监测审计）是威努特（安全厂商）底子，工具本身可信。
+  </div>
+
+  <div class="card">
+    <h2>灵感延伸</h2>
+    <ul>
+      <li>做「本地知识库工具横评」mini-app：WinClaw vs Obsidian vs Cherry Studio vs 你的 kb.html（维度=本地化/语义检索/手机端/安全）。</li>
+      <li>把「微信远程调文件」接入每日简报：出门也能让元宝推当日机会清单。</li>
+      <li>风险专题：跟进「本地 AI 工作台隐私边界」补进副业红线知识块。</li>
+    </ul>
+  </div>
+
+  <div class="cta">完整四问卡 → categories/技术与工具/2026-08-10-WinClaw本地AI知识库.md</div>
+  <div class="foot">由 video-distill 一键流水线生成 · 抖音 @WinClaw 教程</div>
+</div>
+</body>
+</html>
