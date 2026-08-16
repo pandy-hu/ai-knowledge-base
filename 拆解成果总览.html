@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识库拆解成果总览 · 方便查看</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:#f4f6fa; color:#1f2a36; padding:28px 14px; }
+  .wrap { max-width:920px; margin:0 auto; }
+  .hero { background:linear-gradient(135deg,#1c2b4a 0%,#14203a 100%); border-radius:16px; padding:26px 28px; margin-bottom:18px; color:#fff; }
+  .hero h1 { font-size:24px; margin-bottom:8px; }
+  .hero p { font-size:14px; color:#b8c4d8; line-height:1.7; }
+  .hero b { color:#7eb8ff; }
+  .entries { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; margin-bottom:18px; }
+  .entry { background:#fff; border:1px solid #dde3ee; border-radius:12px; padding:12px 14px; font-size:13px; }
+  .entry .t { font-weight:700; color:#1c2b4a; margin-bottom:4px; font-size:13.5px; }
+  .entry .d { color:#5a6378; line-height:1.6; font-size:12.5px; }
+  .entry a { color:#2f6fed; text-decoration:none; font-size:12.5px; display:inline-block; margin-top:6px; }
+  .sec { font-size:16px; font-weight:800; color:#1c2b4a; margin:20px 0 12px; display:flex; align-items:center; gap:8px; }
+  .sec .badge { background:#2f6fed; color:#fff; border-radius:12px; font-size:12px; padding:2px 10px; font-weight:700; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .card { background:#fff; border:1px solid #dde3ee; border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; }
+  .card .num { font-size:11.5px; color:#fff; background:#2f6fed; border-radius:10px; padding:2px 9px; display:inline-block; width:fit-content; margin-bottom:8px; font-weight:700; }
+  .card .num.b { background:#b8860b; }
+  .card .num.g { background:#0e8a5f; }
+  .card .num.o { background:#e85d3c; }
+  .card h3 { font-size:15px; color:#1c2b4a; margin-bottom:6px; }
+  .card .cat { font-size:11.5px; color:#8a93a5; margin-bottom:8px; }
+  .card p { font-size:12.5px; color:#4a5568; line-height:1.7; flex:1; }
+  .card .links { margin-top:10px; display:flex; gap:8px; }
+  .card .links a { background:#f0f4fb; border:1px solid #d6e2f5; color:#2f6fed; border-radius:8px; padding:5px 12px; font-size:12px; text-decoration:none; font-weight:700; }
+  .card .links a:hover { background:#e2ecfc; }
+  .card .links a.md { color:#0e8a5f; background:#effaf4; border-color:#c3e8d6; }
+  .foot { text-align:center; color:#9aa1b0; font-size:12px; margin-top:20px; }
+  @media (max-width:720px){ .entries{grid-template-columns:1fr 1fr;} .grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>📚 知识库拆解成果总览</h1>
+    <p>所有拆解在这里直接看。当前共 <b>53 张四问卡</b>（AI与方法 9 · 创业与变现 14 · 技术与工具 6 · 行业与趋势 5 · 个人成长 19）+ <b>25+ 张可视化拆解页</b>。<br>
+    四个查看入口：本地文件夹 / 手机版 kb.html / GitHub 在线 / 腾讯文档（见下方入口区）。</p>
+  </div>
+
+  <div class="sec">📂 四个查看入口</div>
+  <div class="entries">
+    <div class="entry">
+      <div class="t">💻 电脑本地</div>
+      <div class="d">knowledge-base/ 文件夹里所有「-拆解.html」双击即开，四问卡在 categories/ 下</div>
+      <a href="index.md">📄 看索引 index.md</a>
+    </div>
+    <div class="entry">
+      <div class="t">📱 手机版 kb.html</div>
+      <div class="d">手机浏览器/微信打开 kb.html，全部卡片点开即读</div>
+      <a href="kb.html">📱 打开手机版</a>
+    </div>
+    <div class="entry">
+      <div class="t">🌐 GitHub 在线</div>
+      <div class="d">推送到 GitHub 后自动发布，随时手机访问</div>
+      <a href="https://pandy-hu.github.io/ai-knowledge-base/" target="_blank">🌐 打开在线站点</a>
+    </div>
+    <div class="entry">
+      <div class="t">📄 腾讯文档</div>
+      <div class="d">所有卡同步到腾讯文档「我的知识库（同步副本）」</div>
+      <a href="https://docs.qq.com/doc/RjzgviuSmykK?_fid=RjzgviuSmykK" target="_blank">📄 打开腾讯文档</a>
+    </div>
+  </div>
+
+  <div class="sec">🗓️ 今天拆解批次（2026-08-16） <span class="badge">最新</span></div>
+  <div class="grid">
+    <div class="card">
+      <span class="num">卡52</span>
+      <h3>亦仁小建议 · 赚钱操作系统</h3>
+      <div class="cat">创业与变现 · 生财有术创始人 2018-2022</div>
+      <p>先赚到第一块钱（里程碑）+ 执行力90%（实战高手）+ 能力分割线 + 勇敢收钱超预期交付 + 别炒股炒币 + 社群运营34条</p>
+      <div class="links"><a href="亦仁小建议-拆解.html">▶ 看拆解页</a><a class="md" href="categories/创业与变现/2026-08-16-亦仁小建议.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num b">卡51</span>
+      <h3>新疆旅游"负面言论"真相</h3>
+      <div class="cat">个人成长 · 碧树西风</div>
+      <p>四大不便（景区集中度/全划景区/商业化不够/同质化）+ 三真香（最安全/商家有礼/机票3-4折）= 高自由度合集</p>
+      <div class="links"><a href="说一点新疆的负面言论-拆解.html">▶ 看拆解页</a><a class="md" href="categories/个人成长/2026-08-16-说一点新疆的负面言论.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num">卡50</span>
+      <h3>野心范微博合集 · 草根逆袭七式</h3>
+      <div class="cat">创业与变现 · 1045条微博</div>
+      <p>三体质 + 吃亏学做人 + 预谋策划 + 欲望三级 + 富人五思维 + 对抗焦虑=增长 + 家学三则</p>
+      <div class="links"><a href="野心范微博合集-拆解.html">▶ 看拆解页</a><a class="md" href="categories/创业与变现/2026-08-16-野心范微博合集.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num o">卡49</span>
+      <h3>经济一差，到处都是诈骗</h3>
+      <div class="cat">行业与趋势 · 达叔</div>
+      <p>镰刀二形态（糖衣/美色）+ 距离钱近的技术先用 + 差序格局 + 让你愤怒也是定向收割</p>
+      <div class="links"><a href="经济一差到处都是诈骗-拆解.html">▶ 看拆解页</a><a class="md" href="categories/行业与趋势/2026-08-16-经济一差到处都是诈骗.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num">卡48</span>
+      <h3>赚钱的隐秘法则</h3>
+      <div class="cat">创业与变现 · 小十三</div>
+      <p>一切都有成本 + 高薪二途径（价值/损失）+ 鱼缸生态平衡 = 限定资源游戏</p>
+      <div class="links"><a href="赚钱的隐秘法则-拆解.html">▶ 看拆解页</a><a class="md" href="categories/创业与变现/2026-08-16-赚钱的隐秘法则.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num b">卡47</span>
+      <h3>察言观色 = 洞悉需求</h3>
+      <div class="cat">个人成长 · 鸣人的职场江湖</div>
+      <p>需求是原点 + SPIN 顾问式四问 + 三法识人（情报/档案/试错）+ 不犯错就是最大成功</p>
+      <div class="links"><a href="察言观色洞悉他人心意-拆解.html">▶ 看拆解页</a><a class="md" href="categories/个人成长/2026-08-16-察言观色洞悉他人心意.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num o">卡45</span>
+      <h3>人生亏钱指南 · 避坑底册</h3>
+      <div class="cat">创业与变现 · 生财有术</div>
+      <p>芒格"死在哪不去那" + 8大篇30+坑 + 五宗罪（不懂/贪/盲信/不签合同/非闲钱）</p>
+      <div class="links"><a href="人生亏钱指南-拆解.html">▶ 看拆解页</a><a class="md" href="categories/创业与变现/2026-08-16-人生亏钱指南.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num">卡43</span>
+      <h3>AI+投行分析框架 · 1天摸透行业</h3>
+      <div class="cat">AI与方法 · B站</div>
+      <p>麦肯锡行业框架 + 豆包生成问题清单 + 四大搜索技巧 + 做中学费曼</p>
+      <div class="links"><a href="AI投行分析框架摸透行业-拆解.html">▶ 看拆解页</a><a class="md" href="categories/AI与方法/2026-08-16-AI投行分析框架摸透行业.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num">卡44</span>
+      <h3>100+赚钱高手建议 · 心法总卡</h3>
+      <div class="cat">创业与变现 · 生财有术</div>
+      <p>9条贯穿性硬共识：机会观/细分压倒/MVP先赚第一块/信息差狩猎/利他交付/知行合一…</p>
+      <div class="links"><a href="生财有术100赚钱高手建议-拆解.html">▶ 看拆解页</a><a class="md" href="categories/创业与变现/2026-08-16-生财有术100赚钱高手建议.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num b">卡42</span>
+      <h3>天涯神贴 · 身弱之人如何成功</h3>
+      <div class="cat">个人成长 · B站</div>
+      <p>身弱=能量易漏：事成于密/形象即能量/戒漏能/日拱一卒/双心法</p>
+      <div class="links"><a href="天涯神贴身弱之人如何成功-拆解.html">▶ 看拆解页</a><a class="md" href="categories/个人成长/2026-08-15-天涯神贴身弱之人如何成功.md">📄 四问卡</a></div>
+    </div>
+    <div class="card">
+      <span class="num o">卡41</span>
+      <h3>天涯神贴 · 世界运行规律</h3>
+      <div class="cat">个人成长 · 底层知识库源头</div>
+      <p>历史循环/媒体控思想/勤劳≠发财/富人动听话=收割/专注自身…12条硬原则</p>
+      <div class="links"><a href="天涯神贴世界运行规律-拆解.html">▶ 看拆解页</a><a class="md" href="categories/个人成长/2026-08-15-天涯神贴世界运行规律.md">📄 四问卡</a><a href="底层知识库.md" style="background:#fdf6e3;border-color:#ead9b0;color:#8a6500;">🧠 底层知识库</a></div>
+    </div>
+  </div>
+
+  <div class="sec">🕰️ 更早批次（拆解页仍在，卡片见索引）</div>
+  <div class="entries">
+    <div class="entry"><div class="t">2025买车全攻略</div><div class="d">买车决策组合（卡40+卡30）</div><a href="2025买车全攻略-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">冯道·荣枯鉴</div><div class="d">识人自保 · 小人哲学（卡39）</div><a href="冯道小人哲学荣枯鉴-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">日本经济·动荡时代</div><div class="d">经济低迷根源（卡38）</div><a href="日本经济低迷根源动荡时代-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">专升本骗局话术</div><div class="d">反诈警示（卡37）</div><a href="专升本骗局话术拆解-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">李笑来·换母语学英语</div><div class="d">英语学习法（卡36）</div><a href="李笑来换母语英语学习法-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">短视频独立思考陷阱</div><div class="d">不被带节奏（卡35）</div><a href="短视频独立思考陷阱-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">印度IT被AI做空</div><div class="d">行业真相（卡34）</div><a href="印度IT被AI做空-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">WinClaw本地AI知识库</div><div class="d">效率工具（卡33）</div><a href="WinClaw本地AI知识库-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">反洗钱陷阱防范</div><div class="d">警示视角（卡32）</div><a href="反洗钱陷阱防范-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">Web4.0 AI自己赚钱</div><div class="d">AI趋势（卡31）</div><a href="Web4.0-AI自己赚钱生存-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">车企把消费者当测试员</div><div class="d">买车决策（卡30）</div><a href="车企把消费者当测试员-拆解.html">▶ 拆解页</a></div>
+    <div class="entry"><div class="t">麻省理工AI学习法</div><div class="d">学习方法（卡29）</div><a href="麻省理工AI学习法-拆解.html">▶ 拆解页</a></div>
+  </div>
+
+  <div class="foot">知识库拆解成果总览 · 2026-08-16 生成 · 全部卡片在 index.md · 手机版 kb.html · GitHub Pages 自动发布</div>
+</div>
+</body>
+</html>
