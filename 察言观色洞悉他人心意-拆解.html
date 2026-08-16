@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>察言观色=洞悉需求 · 卡47 拆解</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",sans-serif; background:#f6f7f9; color:#1f2430; padding:32px 16px; }
+  .wrap { max-width:880px; margin:0 auto; }
+  .hero { background:linear-gradient(135deg,#fdf6e3 0%,#fff8e6 55%,#eef4ff 100%); border:1px solid #eadfc4; border-radius:16px; padding:28px 30px; margin-bottom:20px; }
+  .tag { display:inline-block; background:#2f6fed; color:#fff; font-size:12px; padding:3px 12px; border-radius:20px; margin-bottom:12px; letter-spacing:1px; }
+  h1 { font-size:26px; margin-bottom:10px; }
+  .core { font-size:15px; line-height:1.75; color:#3a4152; }
+  .core b { color:#b8860b; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
+  .card { background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:18px 20px; }
+  .card h3 { font-size:15px; color:#2f6fed; margin-bottom:10px; }
+  .card p { font-size:13.5px; line-height:1.7; color:#444c5e; }
+  .card ul { list-style:none; }
+  .card li { font-size:13.5px; line-height:1.75; color:#444c5e; padding-left:16px; position:relative; }
+  .card li::before { content:"▸"; position:absolute; left:0; color:#b8860b; }
+  .spin { background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:20px; margin-bottom:20px; }
+  .spin h3 { font-size:16px; color:#2f6fed; margin-bottom:14px; }
+  .spin4 { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .sp { background:#f0f6ff; border-radius:10px; padding:14px; }
+  .sp .k { font-size:12px; font-weight:700; color:#2f6fed; margin-bottom:6px; }
+  .sp .n { font-size:16px; font-weight:800; color:#1f2430; margin-bottom:4px; }
+  .sp .d { font-size:12px; color:#5a6378; line-height:1.6; }
+  .methods { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px; }
+  .m { background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:18px; }
+  .m .num { font-size:12px; color:#b8860b; font-weight:700; margin-bottom:6px; }
+  .m h4 { font-size:15px; margin-bottom:8px; }
+  .m p { font-size:13px; line-height:1.7; color:#444c5e; }
+  .fallback { background:#fdf6e3; border:1px solid #eadfc4; border-radius:14px; padding:16px 20px; margin-bottom:20px; font-size:13.5px; color:#5a4a1e; line-height:1.7; }
+  .fallback b { color:#b8860b; }
+  .rel { background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:20px; margin-bottom:20px; }
+  .rel h3 { font-size:16px; color:#2f6fed; margin-bottom:12px; }
+  .rel .chips { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { background:#f0f6ff; border:1px solid #d6e4ff; color:#2f6fed; border-radius:20px; padding:6px 14px; font-size:12.5px; }
+  .use { background:#fff; border:1px solid #e6e8ef; border-radius:14px; padding:20px; }
+  .use h3 { font-size:16px; color:#b8860b; margin-bottom:12px; }
+  .use li { font-size:13.5px; line-height:1.8; color:#444c5e; margin-left:18px; }
+  .foot { text-align:center; color:#9aa1b0; font-size:12px; margin-top:16px; }
+  @media (max-width:680px){ .grid,.methods{grid-template-columns:1fr;} .spin4{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">卡47 · 个人成长 · 需求洞察</span>
+    <h1>察言观色 = 洞悉需求</h1>
+    <div class="core">
+      察言观色不是拍马屁，而是<b>洞悉对方未满足的需求</b>——需求是一切问题的原点。
+      看懂人的成熟方法论不是"看脸色"（最末端），而是 <b>SPIN 顾问式四问</b> + <b>情报 / 档案 / 试错三法</b>。
+      信息收集越多越不犯忌讳，<b>不犯错就是最大的成功</b>。
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>① 三句话定调</h3>
+      <ul>
+        <li><b>需求是原点</b>：做产品先搞清用户需求；搞定人先搞清他未满足的需求</li>
+        <li><b>了解需求绝非易事</b>：察言观色=把脉只是障眼法（望闻问切在前）；算命大师靠年龄/着装/谈吐/问题/反应推需求</li>
+        <li><b>世人有成熟方法论</b>：SPIN 顾问式销售四问</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>② 三条识人方法</h3>
+      <ul>
+        <li><b>情报分析法</b>：信息即权力——领导身边的亲戚/朋友/司机/秘书=专属间谍，小恩小惠/情绪价值换情报</li>
+        <li><b>大数据档案法</b>：一人一档——爱吃什么菜/抽什么烟/在看什么书/关注什么，投其所好</li>
+        <li><b>试错迭代法</b>：无情报无档案又急突破——先试探再调整（先煽动别人上书试探天子）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="spin">
+    <h3>③ SPIN 顾问式四问（会说的是新手，会问的是能手，会听的是高手）</h3>
+    <div class="spin4">
+      <div class="sp"><div class="k">S · Situation</div><div class="n">背景问题</div><div class="d">找出客户现状、机会或关注</div></div>
+      <div class="sp"><div class="k">P · Problem</div><div class="n">难点问题</div><div class="d">发现存在的问题、困难、不满</div></div>
+      <div class="sp"><div class="k">I · Implication</div><div class="n">暗示问题</div><div class="d">不解决的后果、作用、影响</div></div>
+      <div class="sp"><div class="k">N · Need-payoff</div><div class="n">价值问题</div><div class="d">解决的回报、效用、意愿</div></div>
+    </div>
+  </div>
+
+  <div class="methods">
+    <div class="m"><div class="num">方法一</div><h4>情报分析法</h4><p>想送对礼？先问领导身边的亲戚朋友司机秘书。历史上丞相都跟娘娘太监搞好关系——为什么？获取情报。</p></div>
+    <div class="m"><div class="num">方法二</div><h4>大数据档案法</h4><p>"一人一档"：每次吃饭记录他动筷最多的菜、抽什么烟、渠道、在看什么书——说话抓重点，做事事半功倍。</p></div>
+    <div class="m"><div class="num">方法三</div><h4>试错迭代法</h4><p>没间谍没档案又急突破：试错呗——知道错了及时调方向。不用亲自上，先让别人试探再调整自己。</p></div>
+  </div>
+
+  <div class="fallback">
+    🔁 <b>兜底</b>：三法都搞不定？换位思考、用同理心琢磨——"如果我是 XX，我需要哪些帮助，我会采取哪些行动"。信息收集越多，越不会犯忌讳，不犯错就是最大的成功。
+  </div>
+
+  <div class="rel">
+    <h3>④ 和你之前项目的关系</h3>
+    <div class="chips">
+      <span class="chip">卡39 冯道：识人自保·"躲"的哲学 → 本卡"用"的技术</span>
+      <span class="chip">卡41 世界运行规律：会说话≠靠谱 → 听懂对方真正要什么</span>
+      <span class="chip">卡44 赚钱心法：利他交付=解决问题 → SPIN 是问需求的成熟工具</span>
+      <span class="chip">卡45 亏钱指南：不犯忌讳 → 不犯错就是最大成功</span>
+      <span class="chip">卡43 投行框架：对事用行业研究，对人用需求洞察</span>
+      <span class="chip">卡35 独立思考：不被表面带节奏 → 看穿言行背后的需求</span>
+    </div>
+  </div>
+
+  <div class="use">
+    <h3>⑤ 怎么用（牛牛BD 直接落地）</h3>
+    <ul>
+      <li><b>见场馆老板前</b>：先做"一人一档"（店况/朋友圈/喜好/痛点），先情报后见面</li>
+      <li><b>谈单时</b>：SPIN 四问替代推销话术，先问需求再推方案</li>
+      <li><b>做产品/副业</b>：先问用户需求，别先造轮子（呼应卡44 MVP）</li>
+      <li><b>送礼/沟通</b>：先摸清对方未满足需求，再行动</li>
+    </ul>
+  </div>
+
+  <div class="foot">知识库 卡47 · 2026-08-16 · 来源：付费文《如何才能学会察言观色，洞悉他人的心意？》鸣人的职场江湖</div>
+</div>
+</body>
+</html>
