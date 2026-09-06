@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《一本书看懂博弈论》· 原文还原 + 四问卡拆解</title>
+<style>
+  :root{--bg:#fafafa;--card:#fff;--ink:#1f2328;--sub:#57606a;--line:#e3e6ea;--red:#e5484d;--green:#2da44e;--amber:#bf8700;--blue:#0969da;--purple:#8250df;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:28px 16px}
+  .wrap{max-width:920px;margin:0 auto}
+  header{background:linear-gradient(135deg,#0969da,#8250df);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:22px}
+  header h1{font-size:23px;font-weight:800;letter-spacing:.5px}
+  header p{opacity:.92;margin-top:8px;font-size:14px}
+  .tag{display:inline-block;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 12px;font-size:12px;margin-top:10px;margin-right:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+  .card h2{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f3f4f6;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .box{border-radius:12px;padding:14px 16px;border:1px solid var(--line)}
+  .box h3{font-size:14px;margin-bottom:8px}
+  .green{background:#f0fdf4;border-color:#bbf7d0}.green h3{color:var(--green)}
+  .amber{background:#fffbeb;border-color:#fde68a}.amber h3{color:var(--amber)}
+  .red{background:#fef2f2;border-color:#fecaca}.red h3{color:var(--red)}
+  .blue{background:#eff6ff;border-color:#bfdbfe}.blue h3{color:var(--blue)}
+  .purple{background:#faf5ff;border-color:#e9d5ff}.purple h3{color:var(--purple)}
+  ul{margin:6px 0 0 18px}li{margin:4px 0;font-size:13.5px}
+  .meta{font-size:12px;color:var(--sub);margin-top:6px}
+  .ch{background:#fff;border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+  .ch b{color:var(--blue)}
+  .quote{background:#f6f8fa;border-left:4px solid var(--purple);padding:10px 14px;margin:8px 0;border-radius:8px;font-size:13.5px;color:var(--ink)}
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:10px}
+  a{color:var(--blue)}
+  .pill{display:inline-block;background:#eef2f7;color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;margin:2px 4px 2px 0}
+  .num{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:var(--blue);color:#fff;border-radius:50%;font-size:12px;font-weight:700;margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>《一本书看懂博弈论》· 拆解</h1>
+    <p>徐文 · 新世界出版社 2010 · mobi 全本萃取 125,048 字 · 归「创业与变现」· 12 章 + 序言</p>
+    <div>
+      <span class="tag">囚徒困境</span><span class="tag">纳什均衡</span>
+      <span class="tag">智猪博弈</span><span class="tag">斗鸡博弈</span><span class="tag">信息不对称</span><span class="tag">公共知识</span><span class="tag">成本止损</span>
+    </div>
+  </header>
+
+  <!-- 作者与主旨 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--purple)"></span>作者与全书主旨</h2>
+    <p style="font-size:14px"><b>作者</b>：徐文，通俗财经/思维类写作者（非学院派）。本书是<b>大众通俗读物</b>，几乎每个理论都配一个历史典故 / 文学故事 / 生活段子（苏格拉底、李世民、吕不韦、武则天、长平之战、皇帝的新装、海盗分金……），<b>重直觉理解而非数学推导</b>。作者原话：「本书讲博弈，更讲生活、讲人生、讲商战……有时你会忘记这是本博弈论的书，还以为是成功学。但博弈还不是为了成功吗？」</p>
+    <div class="quote">「博弈论的精髓在于巧妙的策略，而不是烦琐的过程。我们学习博弈论的目的，不在于享受分析始末，而在于赢得最完美的结局。」</div>
+    <p style="font-size:14px;margin-top:8px"><b>一句话主旨</b>：人生处处是博弈——你与老板、伴侣、同事、商家、对手的每次互动都是一场<b>策略选择游戏</b>；看懂「局」的规则（均衡 / 信息 / 策略 / 成本），就能在利益交锋里<b>少踩坑、占先机</b>。12 个经典模型把「如何赢」拆成可套用工具。</p>
+  </div>
+
+  <!-- 12章地图 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--blue)"></span>全书骨架：12 章地图</h2>
+    <table>
+      <tr><th style="width:54px">章</th><th>主题</th><th>核心模型</th><th>记忆锚点</th></tr>
+      <tr><td>1</td><td>从囚徒困境讲起</td><td>博弈三要素、囚徒困境、一报还一报</td><td>合作有时是利益需要</td></tr>
+      <tr><td>2</td><td>纳什均衡</td><td>纳什均衡、混合策略</td><td>肯德基麦当劳为何紧邻</td></tr>
+      <tr><td>3</td><td>情侣博弈与智猪博弈</td><td>性别之战、智猪博弈</td><td>三个和尚没水吃</td></tr>
+      <tr><td>4</td><td>斗鸡博弈</td><td>斗鸡/胆小鬼博弈</td><td>协和谬误、骑虎难下</td></tr>
+      <tr><td>5</td><td>信息不对称</td><td>信号传递、柠檬市场</td><td>古董商买猫、长平离间</td></tr>
+      <tr><td>6</td><td>赌徒博弈</td><td>零和/边际效用、风险</td><td>吕不韦、陈胜吴广</td></tr>
+      <tr><td>7</td><td>做规则的制定者</td><td>谈判、分粥、海盗分金</td><td>好制度在博弈中衍生</td></tr>
+      <tr><td>8</td><td>公共知识</td><td>公共知识、均衡</td><td>皇帝的新装、泥巴脸</td></tr>
+      <tr><td>9</td><td>选择的智慧</td><td>麦穗、霍布森、柠檬</td><td>布利丹的驴子</td></tr>
+      <tr><td>10</td><td>概率迷思</td><td>三门问题、中立原理</td><td>美女老虎悖论</td></tr>
+      <tr><td>11</td><td>悖论困惑</td><td>艾毕曼德、圣彼德堡、半费之讼</td><td>逻辑的套索</td></tr>
+      <tr><td>12</td><td>皮洛斯的胜利</td><td>成本/沉没成本、1美元拍卖</td><td>焦土政策、该谋和</td></tr>
+    </table>
+  </div>
+
+  <!-- 逐章还原 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--amber)"></span>逐章详尽还原（核心案例 + 结论）</h2>
+    <p class="meta">完整版见仓库根 `一本书看懂博弈论-原文还原与作者主旨.md`（每章含故事原文、推理、结论）。以下为速读。</p>
+
+    <div class="ch"><span class="num">1</span><b>博弈论：从囚徒困境讲起</b> — 三要素（局中人/策略/效用）+ 三类分类（静态动态·完全不完全信息·合作非合作）。<b>囚徒困境</b>：隔离审讯下个体理性→都坦白各 15 年（损人不利己），解法=重复博弈+"一报还一报"（善意/宽容/报复/适应/清晰）。修路博弈=公共品困境需政府协调；商学院 27 人 A/B 游戏=公地悲剧。</div>
+
+    <div class="ch"><span class="num">2</span><b>纳什均衡</b> — 谁单独改策略都不更好即均衡。<b>肯德基麦当劳紧邻</b>：各自想多抢客→都向中点挤成唯一稳定均衡（解释商业中心形成）。<b>混合策略</b>：警察小偷无纯均衡→抽签巡逻（2/3 去值钱区）期望收益更高。<b>顽猴博弈</b>：每只不反抗→全被宰，映射尼莫拉铭文「对一个人的不公是对所有人的威胁」。</div>
+
+    <div class="ch"><span class="num">3</span><b>情侣博弈与智猪博弈</b> — <b>智猪博弈</b>：大猪踩踏板、小猪搭便车白吃，小猪有绝对占优策略。映射：三个和尚没水吃、大企业砸广告小企业尾随、大股东监督经理、股市庄家是大猪散户做聪明小猪、职场大猪小猪。<b>枪打出头鸟</b>：乙教授装不懂反拿高薪岗→全才不如专才、隐而不露有时更赚。<b>改规则</b>：减量+移位最优→公司激励按业绩差异化。</div>
+
+    <div class="ch"><span class="num">4</span><b>斗鸡博弈</b> — 两公鸡进退，两纳什均衡（一进一退）。<b>胆小鬼博弈</b>：表明绝不退（亡命徒）可吓退对方；尼克松"疯子策略"威胁胡志明失效。<b>协和谬误</b>：英法飞机投入巨大仍坚持→市场淘汰，别把错误进行到底。案例：玄武门之变（李世民先发）、古巴导弹危机。</div>
+
+    <div class="ch"><span class="num">5</span><b>信息不对称</b> — <b>古董商买猫</b>：农户才是信息优势方，反赚一笔。<b>维克瑞拍卖</b>：出价最高者得但付次高价→诱使说真话。<b>明星代言</b>=信号传递（产品不错+企业有实力）。<b>马陵之战</b>孙膑减灶示弱；<b>长平之战</b>范雎反间计换赵括→40 万被坑杀，赵国输在信息一环。</div>
+
+    <div class="ch"><span class="num">6</span><b>赌徒博弈</b> — 赌博是零和/负和 + 边际效用递减（输 100 的不快 >> 赢 100 的愉快）。彩票赔率 <50% 仍有人买=缺乏理性。21 点庄家有信息+概率双优势。<b>吕不韦</b>「立国君之利无穷」押注异人成秦相；<b>陈胜吴广</b>失期当斩→反是最优；<b>武则天</b>扼死亲女嫁祸夺后位=政治豪赌。</div>
+
+    <div class="ch"><span class="num">7</span><b>做规则的制定者</b> — <b>分蛋糕</b>：一方切、另一方先挑→逼公平。<b>讨价还价</b>：双数阶段后发占优、单数阶段先发占优。<b>分粥游戏</b>：五种方法只有「分者最后领」让每碗一样多（用利己达利他）。<b>第22条军规</b>：自相矛盾规则催生异化。<b>夏普里值</b>：比萨分配杰克 1 金汤姆 7 金（收益与付出成比例）。<b>海盗分金</b>：倒推法得 (98,0,1,1,0)，最危险者反成大赢家。</div>
+
+    <div class="ch"><span class="num">8</span><b>公共知识</b> — 不仅是「大家都知道 P」，更是「知道对方知道、知道对方知道自己知道……」无限递归。<b>泥巴脸</b>：第 m 次询问 m 个孩子同时举手。<b>皇帝的新装</b>：小孩喊破→「皇上没穿」成公共知识，均衡打破。<b>100 天杀夫</b>：老太太一句话成公共知识→第 100 天全员杀夫（归纳推理）。</div>
+
+    <div class="ch"><span class="num">9</span><b>选择的智慧</b> — <b>最大麦穗</b>：分三段摘到相对最好，人生只有最满意解。<b>5000万和爱情</b>：爱情≤金钱，解法提自身价值。<b>霍布森选择</b>：伪选择（好马出不去小门）扼杀创造力。<b>布利丹驴子</b>：两堆草一样好→犹豫饿死。<b>柠檬市场</b>：劣币驱逐良币、裁员优于全员减薪、鲜花插牛粪（逆向选择）。</div>
+
+    <div class="ch"><span class="num">10</span><b>概率迷思</b> — <b>美女老虎悖论</b>：青年递推「虎不在任何门」→开门被吃，直觉不可靠。<b>三门问题</b>：主持人开空门后应改选，概率 1/3→2/3。<b>犯傻的史密斯</b>：看守说「汤姆必放」不算泄密，概率仍 2/3。<b>赌徒谬误</b>：三硬币全同仅 2/8 非 1/2。<b>中立原理</b>：前提须客观对称，否则闹笑话（拉普拉斯算太阳升起≈1/200万）。</div>
+
+    <div class="ch"><span class="num">11</span><b>悖论困惑</b> — <b>艾毕曼德</b>「所有克里特人都是撒谎者」真则假假则真。<b>圣彼德堡悖论</b>：期望收益无穷大但没人真付无限钱，贝努利解=人追期望效用非金额。<b>半费之讼/鳄鱼/绞刑</b>：自我指涉的逻辑套索。<b>猎犬与猎手</b>：激励制度要与时俱进。</div>
+
+    <div class="ch"><span class="num">12</span><b>皮洛斯的胜利</b> — 成本=放弃之物（机会成本/沉没成本）。<b>皮洛斯</b>胜罗马却惨重「再来一场我也完了」→得不偿失别打。<b>1美元拍卖</b>：次高者白付→越陷越深，及时抽身。<b>国美焦土</b>：破坏资产逼退百思买，置死地而后生。<b>该谋和</b>：取胜无望别宁为玉碎，妥协保存在。</div>
+  </div>
+
+  <!-- 方法论工具箱 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--green)"></span>全书方法论：博弈思维工具箱</h2>
+    <div class="grid">
+      <div class="box blue"><h3>① 先辨局</h3><ul><li>囚徒困境 / 纳什 / 智猪 / 斗鸡 / 信息?</li><li>套中一个就懂大半</li></ul></div>
+      <div class="box blue"><h3>② 看三要素</h3><ul><li>局中人是谁</li><li>各有什么策略</li><li>效用（得失）怎么算</li></ul></div>
+      <div class="box blue"><h3>③ 找均衡</h3><ul><li>现状稳定但未必好</li><li>谁先动/后动占优</li><li>一报还一报促成合作</li></ul></div>
+      <div class="box purple"><h3>④ 查信息</h3><ul><li>对称吗？</li><li>发信号（求职/代言）</li><li>隐藏意图（减灶/离间）</li></ul></div>
+      <div class="box purple"><h3>⑤ 定规则</h3><ul><li>能定规则就定好制度</li><li>分粥让分者最后领</li><li>不能就借势做小猪</li></ul></div>
+      <div class="box amber"><h3>⑥ 算成本</h3><ul><li>机会+沉没成本</li><li>警惕协和谬误</li><li>1美元拍卖越陷越深</li></ul></div>
+      <div class="box amber"><h3>⑦ 管概率</h3><ul><li>别滥用中立原理</li><li>别信直觉（三门）</li><li>别陷赌徒谬误</li></ul></div>
+      <div class="box red"><h3>⑧ 知妥协</h3><ul><li>取胜无望就谋和</li><li>留得青山在</li><li>务实非软弱</li></ul></div>
+      <div class="box green"><h3>跨库启发</h3><ul><li>↔ 引爆点（附着力=发信号）</li><li>↔ 挠痒营销 / 野心范</li><li>↔ 世界运行规律</li></ul></div>
+    </div>
+  </div>
+
+  <!-- 四问卡 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--red)"></span>四问卡拆解（卡 68 · 创业与变现）</h2>
+    <p style="font-size:14px"><b>一句话核心</b>：人生处处是博弈，看懂"局"的规则（均衡/信息/策略/成本）就能在交锋里少踩坑、占先机；12 个经典模型把"如何赢"拆成可套用工具。</p>
+    <div class="quote">逻辑链：博弈三要素 → 囚徒困境(合作) → 纳什均衡(现状) → 智猪/斗鸡(进退) → 信息不对称(信号) → 规则制定(制度) → 公共知识(共识) → 选择/概率(决策) → 成本(止损)</div>
+
+    <div class="grid" style="margin-top:12px">
+      <div class="box green"><h3>🟢 可迁移</h3><ul><li>12 模型框架</li><li>纳什均衡视角</li><li>智猪/搭便车</li><li>重复博弈合作</li><li>公共知识</li><li>机会/沉没成本</li><li>倒推法、三门问题</li></ul></div>
+      <div class="box amber"><h3>🟡 局限/过时</h3><ul><li>2010 国产通俗读物</li><li>多历史故事二手转述</li><li>人性假设单一(绝对理性利己)</li><li>部分成功学价值观导向</li></ul></div>
+      <div class="box red"><h3>🔴 糟粕/慎用</h3><ul><li>"离间/焦土/隐藏意图"仅作识别防御</li><li>严禁用于操纵/欺诈/割韭菜</li><li>逆向选择用来看懂乱象而非学坏</li></ul></div>
+    </div>
+
+    <h3 style="font-size:15px;margin:16px 0 8px">四个可迁移认知（对你有用）</h3>
+    <ul>
+      <li><b>① 找"均衡"而非"对错"</b>：老板画饼不涨薪、同行价格战、粉丝互撕——多是"稳定但双输"的纳什均衡，看清才想怎么破（重复博弈+一报还一报）。</li>
+      <li><b>② 做"大猪"还是"小猪"要算清</b>：你做内容/产品是"大猪"（砸附着力、建基础设施），让用户做"小猪"（低门槛跟随）。牛牛运动 BD、书→AI 智能体矩阵都适用"强者建场、弱者借势"。</li>
+      <li><b>③ 信息差是变现核心</b>：公众号/小红书/知识星球/推客本质在"发信号"——用案例数据人设降读者决策成本；同时警惕被锚定/离间套路。</li>
+      <li><b>④ 及时止损是最高博弈素养</b>：协和谬误、1美元拍卖、沉没成本——副业项目一旦验证"得不偿失的皮洛斯胜利"，果断抽身比硬撑更值。</li>
+    </ul>
+
+    <div class="box red" style="margin-top:12px"><h3>🎯 对你（上野）有没有用：高</h3>
+    <p style="font-size:13.5px">框架+副业双用。副业作战地图（囚徒困境/智猪自检"我是大猪还是小猪"）；内容钩子（协和谬误/1美元拍卖/皇帝新装写爆款）；决策护栏（副业用成本-收益+沉没成本及时止损，避免一人硬扛 all 事）；风险雷达（识别价格战、信息差割韭菜、锚定套路）。</p></div>
+
+    <h3 style="font-size:15px;margin:16px 0 8px">跨库打通点</h3>
+    <p style="font-size:13.5px">
+      <span class="pill">↔ 卡67 引爆点（附着力=发信号、≤150小群=小猪圈层）</span>
+      <span class="pill">↔ 卡27 挠痒痒营销</span>
+      <span class="pill">↔ 卡44 野心范</span>
+      <span class="pill">↔ 卡66 阶级跃升</span>
+      <span class="pill">↔ 卡41 世界运行规律</span>
+      <span class="pill">↔ 卡65 只刺激消费</span>
+      <span class="pill">↔ 卡42 自带财气 / 卡33 身弱</span>
+      <span class="pill">📌 可合流总卡：一人公司博弈作战图</span>
+    </p>
+  </div>
+
+  <!-- 12模型速查 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--blue)"></span>12 模型速查表</h2>
+    <table>
+      <tr><th>模型</th><th>一句话</th><th>你的用法</th></tr>
+      <tr><td>囚徒困境</td><td>个体理性→双输</td><td>重复博弈+一报还一报破局</td></tr>
+      <tr><td>纳什均衡</td><td>谁单独改都不更好</td><td>看清稳定但双输现状</td></tr>
+      <tr><td>智猪博弈</td><td>小猪搭便车、大猪干活</td><td>你建场、用户跟随</td></tr>
+      <tr><td>情侣博弈</td><td>先动占优</td><td>抢先发声/定位</td></tr>
+      <tr><td>斗鸡博弈</td><td>进退两难</td><td>示强逼退 or 及时妥协</td></tr>
+      <tr><td>信息不对称</td><td>卖的比买的精</td><td>发信号降读者决策成本</td></tr>
+      <tr><td>分粥/海盗分金</td><td>好制度=均衡</td><td>设计分配/激励规则</td></tr>
+      <tr><td>公共知识</td><td>大家都知道且知对方知道</td><td>制造共识引爆传播</td></tr>
+      <tr><td>霍布森选择</td><td>伪选择</td><td>跳出别人设的"马圈"</td></tr>
+      <tr><td>柠檬市场</td><td>劣币驱良币</td><td>识别逆选择乱象</td></tr>
+      <tr><td>三门问题</td><td>该改选就改选</td><td>别信直觉信概率</td></tr>
+      <tr><td>皮洛斯胜利</td><td>得不偿失别打</td><td>算清成本及时抽身</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:#fffbeb;border-color:#fde68a">
+    <p style="font-size:13px;color:#8a6d00"><b>⚠️ 阅读边界</b>：本书为 2010 年通俗读物，案例多为事后归因与历史故事佐证，作框架借鉴勿当因果铁律；"离间/焦土/隐藏意图"等仅用于识别与防御，严禁用于操纵他人。不构成任何投资/经营/情感建议。</p>
+  </div>
+
+  <footer>知识库 · 卡 68《一本书看懂博弈论》 · 生成于 2026-09-06 · 配套原文还原 MD + 四问卡 MD 已同步四端</footer>
+</div>
+</body>
+</html>
