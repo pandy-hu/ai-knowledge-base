@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《投资心理学》· 原文还原 + 四问卡拆解</title>
+<style>
+  :root{--bg:#fafafa;--card:#fff;--ink:#1f2328;--sub:#57606a;--line:#e3e6ea;--red:#e5484d;--green:#2da44e;--amber:#bf8700;--blue:#0969da;--purple:#8250df;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:28px 16px}
+  .wrap{max-width:920px;margin:0 auto}
+  header{background:linear-gradient(135deg,#bf8700,#e5484d);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:22px}
+  header h1{font-size:23px;font-weight:800;letter-spacing:.5px}
+  header p{opacity:.93;margin-top:8px;font-size:14px}
+  .tag{display:inline-block;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 12px;font-size:12px;margin-top:10px;margin-right:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+  .card h2{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f3f4f6;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  .box{border-radius:12px;padding:14px 16px;border:1px solid var(--line)}
+  .box h3{font-size:14px;margin-bottom:8px}
+  .green{background:#f0fdf4;border-color:#bbf7d0}.green h3{color:var(--green)}
+  .amber{background:#fffbeb;border-color:#fde68a}.amber h3{color:var(--amber)}
+  .red{background:#fef2f2;border-color:#fecaca}.red h3{color:var(--red)}
+  .blue{background:#eff6ff;border-color:#bfdbfe}.blue h3{color:var(--blue)}
+  .purple{background:#faf5ff;border-color:#e9d5ff}.purple h3{color:var(--purple)}
+  ul{margin:6px 0 0 18px}li{margin:4px 0;font-size:13.5px}
+  .meta{font-size:12px;color:var(--sub);margin-top:6px}
+  .ch{background:#fff;border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+  .ch b{color:var(--amber)}
+  .quote{background:#f6f8fa;border-left:4px solid var(--purple);padding:10px 14px;margin:8px 0;border-radius:8px;font-size:13.5px;color:var(--ink)}
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:10px}
+  a{color:var(--blue)}
+  .pill{display:inline-block;background:#eef2f7;color:var(--sub);border-radius:6px;padding:2px 8px;font-size:12px;margin:2px 4px 2px 0}
+  .num{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;background:var(--amber);color:#fff;border-radius:50%;font-size:12px;font-weight:700;margin-right:6px}
+  .layer{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px}
+  @media(max-width:680px){.layer{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>《投资心理学》（原书第5版）· 拆解</h1>
+    <p>约翰·R. 诺夫辛格 · 行为金融学权威教材 · 译者郑磊 · mobi 全本萃取 112,291 字 · 归「创业与变现」· 12 章 + 推荐序/译者序/前言</p>
+    <div>
+      <span class="tag">过度自信</span><span class="tag">处置效应</span>
+      <span class="tag">框架效应</span><span class="tag">心理账户</span><span class="tag">代表性偏差</span><span class="tag">社交从众</span><span class="tag">情绪驱动</span><span class="tag">自我控制</span>
+    </div>
+  </header>
+
+  <!-- 作者与主旨 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--purple)"></span>作者与全书主旨</h2>
+    <div class="quote">诺夫辛格是行为金融学权威学者，每隔两三年修订再版。本书的前提是：<b>传统金融学假设"人理性"，但这个假设是错的</b>。真实市场里操盘的是有血有肉、有情绪、有偏见的人。2002 年卡尼曼获诺奖标志行为金融被主流接纳。</div>
+    <div class="layer">
+      <div class="box blue"><h3>表层·是什么</h3><ul><li>人在投资中犯 12 类可预见心理错误</li><li>有实验与数据硬证据，非个别现象</li></ul></div>
+      <div class="box amber"><h3>中层·为什么</h3><ul><li>偏差三来源：自欺 / 启发式捷径 / 情绪</li><li>期望理论 S 形价值函数（损失更陡）</li></ul></div>
+      <div class="box green"><h3>底层·所以呢</h3><ul><li>识别偏差→设量化标准/分散/控环境</li><li>把认知劣势变可控变量，跑赢大多数人</li></ul></div>
+    </div>
+    <p class="meta">一句话核心：你的亏损，大半是<b>大脑自带 bug</b>（过度自信、处置效应、框架效应、熟悉偏差、情绪、自控失败）系统性吞掉的。</p>
+  </div>
+
+  <!-- 12章地图 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--amber)"></span>全书 12 章地图</h2>
+    <table>
+      <tr><th style="width:42px">章</th><th>主题</th><th>核心偏差</th><th>一句话</th></tr>
+      <tr><td>1</td><td>心理学与金融</td><td>理性人假设破产</td><td>传统 vs 行为金融；偏差来自自欺/捷径/情绪</td></tr>
+      <tr><td>2</td><td>过度自信</td><td>错误估计+自负</td><td>越自信越频繁交易，收益反而越低</td></tr>
+      <tr><td>3</td><td>自豪与懊悔</td><td>处置效应</td><td>过早卖盈利、过久持亏损</td></tr>
+      <tr><td>4</td><td>风险感知</td><td>赌资/蛇咬/翻本</td><td>赢后更冒险、亏后避险、输后想翻本</td></tr>
+      <tr><td>5</td><td>决策框架</td><td>框架效应</td><td>问题怎么问，决定选高风险还是低风险</td></tr>
+      <tr><td>6</td><td>心理账户</td><td>金钱贴标签</td><td>钱本无标签，人却把存款/消费分账户</td></tr>
+      <tr><td>7</td><td>构建组合</td><td>行为金字塔</td><td>人按"目标层"建组合，非马科维茨最优</td></tr>
+      <tr><td>8</td><td>代表性与熟悉</td><td>外推法+本土偏差</td><td>好公司≠好投资；只投熟悉的→过度集中</td></tr>
+      <tr><td>9</td><td>社交互动</td><td>从众效应</td><td>邻居买啥你买啥，媒体/改名潮放大偏差</td></tr>
+      <tr><td>10</td><td>情绪与决策</td><td>阳光/月相/乐观</td><td>晴天股市涨、满月跌、乐观催生泡沫</td></tr>
+      <tr><td>11</td><td>自我控制</td><td>享乐vs未来</td><td>5 大策略战胜偏差，机构也可善用偏差</td></tr>
+      <tr><td>12</td><td>次贷危机心理学</td><td>框架操纵+社会规范</td><td>贪婪放贷人用复杂合同+情感压力猎杀</td></tr>
+    </table>
+  </div>
+
+  <!-- 逐章还原 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--amber)"></span>逐章原文还原（核心命题 + 硬证据）</h2>
+
+    <div class="ch"><b>1 心理学与金融</b> · 理性人假设破产。预测测试：让受访者给 10 题"90%把握"区间，多数人错 5 题以上。锚定：问"1929 道指 300 点若每年股息再投，2011 年多少？"人锚定 12218（不含股息），实际 332130（年均 8.81%）。期望理论 S 形价值函数=全书基石。</div>
+
+    <div class="ch"><b>2 过度自信</b> · 错误估计+自负。80% 大学生认为开车水平高于平均。巴伯&奥丁：单身男年周转 85%、净回报最低 11.4%；低周转组 18.5%——5 年 1 万差 5000+。转网上交易后收益 18%→12%。知识错觉：信息越多越自信但准确度不升。</div>
+
+    <div class="ch"><b>3 自豪与懊悔 → 处置效应</b> · 过早卖盈利、过久持亏损。奥丁：卖盈利股概率是卖亏损股 1.5 倍；以色列持盈利股 20 天、亏损股 43 天。双输：卖的盈利股次年跑赢 2.35%，留的亏损股跑输 1.06%。参考价格用 52 周高点；盈利后下跌才回购（高 3 倍）。法则："砍亏让盈"。</div>
+
+    <div class="ch"><b>4 风险感知</b> · 赌资效应（赢后更冒险）、蛇咬效应（亏后避险）、翻本效应（输后想翻本，概率<50%也赌）。禀赋/现状偏差：继承遗产已是高风险形态就继续投高风险。记忆认知失谐：建筑师回忆收益比实际高 6.22 个百分点。风险偏好 2/3 由基因决定。</div>
+
+    <div class="ch"><b>5 决策框架</b> · 卡尼曼疾病案例：正面框架 72% 选确定项，负面框架 78% 选冒险项。芬兰 742 顾问：正面框架 77.7% 认为低增长企业要溢价，负面框架仅 1.9%。思维模式：CRT 测试分直觉/分析者，直觉者符合期望理论。401k 退出制参与率 86%（加入制仅 37%）。</div>
+
+    <div class="ch"><b>6 心理账户</b> · 钱本无标签，大脑建"心理会计文件柜"。J 夫妇为度假屋存 4% 收益却以 9% 贷款买车。沉没成本：暴雪天自己买票（40 美元）比免费票更去看球。狭隘视野→70% 401k 不分散。盈利股被低估、亏损股被高估→"收益动量"。</div>
+
+    <div class="ch"><b>7 构建投资组合</b> · 现代组合理论看"相关性"降风险，心理账户使人孤立看每笔→建"行为金字塔"（按目标分层）。家庭：49% 通过基金分散，却仅用 15% 财富直接持股且只 4 只股票。风险偏好驻留：按部件匹配而非整体优化。1/n 初级分散。</div>
+
+    <div class="ch"><b>8 代表性与熟悉</b> · 玛丽案例：人凭"勤奋"选"图书管理员+塞拉"却忽视概率。投资：价值股跑赢热门股（5 年 143.4% vs 81.8%）。外推法→高买低卖。本土偏差：美投资者 87% 投美股（理论应 43%）。可口可乐总部亚特兰大持 16%；安然员工 401k 60% 投本公司，破产损失 13 亿。</div>
+
+    <div class="ch"><b>9 社交互动</b> · 邻里效应：邻居行业投资增 10% 你增 2%。同类规范：11 栋楼图书管理员养老金参与率 14%–73%。投资俱乐部实际净收益仅 14.1%（媒体称 60% 跑赢是幸存者偏差）。.com 更名潮三周跑赢 38%；2000 后去".com"反涨 64%。</div>
+
+    <div class="ch"><b>10 情绪</b> · 26 城市晴好日 vs 糟糕日年化收益差 24.6%。满月前后收益比新月低 3–5%。足球输球次日该国股市跌 0.21%。3Com/奔迈分拆：乐观者抬高新公司，母股价低于子公司持续数月，半年均跌 50%+。纳指 2000 年跌 54%。"这次不同"=泡沫口号。</div>
+
+    <div class="ch"><b>11 自我控制</b> · 及时享乐者 vs 为未来打算者。战胜偏差 5 策略：①理解偏差 ②明确为何投（具体目标）③量化标准 ④分散 ⑤控制环境（每月只看一次、固定交易日）。善用偏差：SMT 存款率 3.5%→11.6%；"边存钱边赢奖"彩票式储蓄。</div>
+
+    <div class="ch"><b>12 次贷危机心理学</b> · 次级贷款利用"指数增长偏差"+复杂合同框架操纵（成本藏进低手续费/低起步月供，真实高息几年后翻倍，拖欠率 10%→40%）。目标：金融无知者/老人/情感压力者。社会交叉补贴：穷人补贴富人。策略性违约靠"羞耻感"社会规范阻止。供应链全链条心理偏差（瑞银/AIG/穆迪/SEC）。</div>
+  </div>
+
+  <!-- 四问卡 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--green)"></span>四问卡（卡70）· 对你（上野）= 一人公司</h2>
+    <div class="quote"><b>一句话核心</b>：投资者的亏损大半不是不懂基本面，而是大脑自带的 12 类心理偏差系统性吞噬财富；本书教你识别并战胜它们。</div>
+
+    <h3 style="font-size:14px;margin:14px 0 8px">🟢 四个可迁移认知（直接用）</h3>
+    <div class="grid">
+      <div class="box green"><h3>① 处置效应反转</h3><p style="font-size:13px">别过早榨干好内容、也别死守不涨的烂项目——<b>"砍掉亏损，让盈利奔跑"</b>同样适用于精力分配。</p></div>
+      <div class="box green"><h3>② 框架效应=营销</h3><p style="font-size:13px">正面（得到）vs 负面（失去）框架切换改变选择；次贷用窄框架瞒成本→<b>反向警示：别用套路割粉丝</b>。</p></div>
+      <div class="box green"><h3>③ 熟悉偏差=流量</h3><p style="font-size:13px">人只信熟悉→做号造"本地化+人设熟悉感"；但真投资要反着来（分散、不重仓本公司）。</p></div>
+      <div class="box green"><h3>④ 自控 5 策略</h3><p style="font-size:13px">理解偏差/明确目标/量化标准/分散/控制环境（每月只看一次、屏蔽噪音）——把自律外包给系统。</p></div>
+    </div>
+
+    <h3 style="font-size:14px;margin:14px 0 8px">🟡 看场景 · 🔴 糟粕</h3>
+    <div class="layer">
+      <div class="box amber"><h3>🟡 看场景</h3><ul>
+        <li>过度自信→创业别频繁换项目/牛市乱加杠杆</li>
+        <li>心理账户→给用户设独立"会员费/单次"账户提付费</li>
+        <li>禀赋/沉没成本→别因"已投入"死守烂项目</li>
+      </ul></div>
+      <div class="box red"><h3>🔴 糟粕/打折</h3><ul>
+        <li>对象是美股投资者，套"一人公司"需转化</li>
+        <li>数据偏 401k/美股，要本土化</li>
+        <li>描述"是什么"不保证"怎么做就赚"</li>
+        <li>自救前提有本金+长期视角；零成本副业更大价值在识别他人套路</li>
+      </ul></div>
+    </div>
+
+    <div class="quote" style="margin-top:12px"><b>🎯 对你有没有用：高</b>。一人公司+公众号+知识星球，这套是<b>"认知偏差防御手册"</b>：正向学营销框架/社群规范/自控系统；负向（更重要）自检——自己是否在用书里拆的"框架操纵+情绪煽动"割粉丝（呼应卡58/59金融批判、卡69）。</div>
+  </div>
+
+  <!-- 跨库打通 + 速查 -->
+  <div class="card">
+    <h2><span class="dot" style="background:var(--blue)"></span>跨库打通 · 12 章速查表</h2>
+    <p style="font-size:13.5px;margin-bottom:10px">打通：<span class="pill">卡67 引爆点（社交/从众/邻里效应=环境威力）</span><span class="pill">卡68 博弈论（框架效应/过度自信）</span><span class="pill">卡69 我不是教你诈（神主牌=情绪操纵+框架）</span><span class="pill">卡41/65（看穿结构）</span> → 建议合流「一人公司博弈作战图」+「认知偏差防御手册」</p>
+    <table>
+      <tr><th style="width:48px">章</th><th>心理偏差</th><th>必记数据/结论</th></tr>
+      <tr><td>1</td><td>理性人假设破产</td><td>期望理论 S 形价值函数（损失比收益更陡）</td></tr>
+      <tr><td>2</td><td>过度自信</td><td>高周转组净回报 11.4% vs 低周转 18.5%</td></tr>
+      <tr><td>3</td><td>处置效应</td><td>过早卖盈利、过久持亏损；"砍亏让盈"</td></tr>
+      <tr><td>4</td><td>赌资/蛇咬/翻本</td><td>赢后更冒险、亏后避险、输后想翻本；风险偏好 2/3 基因</td></tr>
+      <tr><td>5</td><td>框架效应</td><td>正面避风险、负面爱风险；401k 退出制参与率 86%</td></tr>
+      <tr><td>6</td><td>心理账户</td><td>狭隘框架→70% 401k 不分散；盈利股低估亏损股高估</td></tr>
+      <tr><td>7</td><td>行为金字塔</td><td>按目标分层建组合，非马科维茨最优；1/n 初级分散</td></tr>
+      <tr><td>8</td><td>外推+本土偏差</td><td>价值股跑赢热门股；本土偏差美 87%/理论 43%</td></tr>
+      <tr><td>9</td><td>从众效应</td><td>邻里效应；.com 更名潮三周跑赢 38%</td></tr>
+      <tr><td>10</td><td>阳光/月相/乐观</td><td>晴好日年化高 24.6%；"这次不同"=泡沫口号</td></tr>
+      <tr><td>11</td><td>自我控制</td><td>战胜偏差 5 策略；SMT 存款率 3.5%→11.6%</td></tr>
+      <tr><td>12</td><td>框架操纵+社会规范</td><td>复杂合同藏成本+情感压力猎杀；羞耻感阻止违约</td></tr>
+    </table>
+  </div>
+
+  <footer>《投资心理学》拆解 · 卡70 · 商业经典书系第 4 本（引爆点 / 博弈论 / 我不是教你诈 / 投资心理学）· 四端同步：本地 + kb.html + GitHub + 腾讯文档</footer>
+</div>
+</body>
+</html>
