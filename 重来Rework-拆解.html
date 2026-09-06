@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《重来》Rework · 拆解</title>
+<style>
+  :root{--bg:#fafafa;--card:#fff;--ink:#1f2328;--sub:#57606a;--line:#e3e6ea;--red:#e5484d;--green:#2da44e;--amber:#bf8700;--blue:#0969da;--purple:#8250df;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:28px 16px}
+  .wrap{max-width:880px;margin:0 auto}
+  header{background:linear-gradient(135deg,#2da44e,#0969da);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:22px}
+  header h1{font-size:23px;font-weight:800;letter-spacing:.5px}
+  header p{opacity:.92;margin-top:8px;font-size:14px}
+  .tag{display:inline-block;background:rgba(255,255,255,.22);border-radius:20px;padding:3px 12px;font-size:12px;margin-top:10px;margin-right:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px}
+  .card h2{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .dot{width:10px;height:10px;border-radius:50%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f3f4f6;font-weight:700}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .box{border-radius:12px;padding:14px 16px;border:1px solid var(--line)}
+  .box h3{font-size:14px;margin-bottom:8px}
+  .green{background:#f0fdf4;border-color:#bbf7d0}.green h3{color:var(--green)}
+  .amber{background:#fffbeb;border-color:#fde68a}.amber h3{color:var(--amber)}
+  .red{background:#fef2f2;border-color:#fecaca}.red h3{color:var(--red)}
+  .blue{background:#eff6ff;border-color:#bfdbfe}.blue h3{color:var(--blue)}
+  ul{margin:6px 0 0 18px}li{margin:4px 0;font-size:13.5px}
+  .meta{font-size:12px;color:var(--sub);margin-top:6px}
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:10px}
+  a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>《重来：更为简单有效的商业思维》(Rework)</h1>
+    <p>Jason Fried &amp; DHH · 37signals/Basecamp 创始人 · mobi 全本萃取 54,153 字 · 归「创业与变现」</p>
+    <div>
+      <span class="tag">小即是优势</span><span class="tag">挠自己痒</span>
+      <span class="tag">客户融资</span><span class="tag">一人公司圣经</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <h2><span class="dot" style="background:var(--green)"></span>核心结论：小公司也能赢</h2>
+    <table>
+      <tr><th>原则</th><th>要义</th></tr>
+      <tr><td>小是优势</td><td>机动、专注、不被流程拖死；小公司服务「500万强」</td></tr>
+      <tr><td>计划是猜想</td><td>别做5年计划，市场会变，边走边修正</td></tr>
+      <tr><td>不必做大</td><td>不为增长而增长；小公司更赚钱更自由</td></tr>
+      <tr><td>挠自己的痒</td><td>做自己真实需要的产品(Basecamp 因不满市面工具而生)</td></tr>
+      <tr><td>开公司≠开startup</td><td>startup=融资烧钱等收购；business=赚钱存活</td></tr>
+      <tr><td>客户融资</td><td>用客户预付款给自己融资，不先找 VC</td></tr>
+      <tr><td>做半个产品</td><td>砍功能、先上线、再迭代(非半成品)</td></tr>
+      <tr><td>做减法 / 说"不"</td><td>less is more；聚焦核心，拒不相关需求</td></tr>
+      <tr><td>招人在痛时</td><td>不预招、不堆人头；真痛了再招</td></tr>
+      <tr><td>现在就出发</td><td>"没时间/没资金"多是怯场借口</td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="box green"><h3>✅ 可迁移（学）</h3>
+      <ul><li>几乎全书适用一人公司</li><li>小即是优势、挠自己痒</li><li>客户融资(合规版预收款)</li><li>做半个产品先上线</li><li>说"不"护主线、招人在痛时</li></ul></div>
+    <div class="box amber"><h3>⚠️ 边界（打折听）</h3>
+      <ul><li>2010年书，远程当时激进今常态</li><li>"不做PR"修正为"产品即营销+内容引流"</li><li>"不增长"适合 lifestyle business</li></ul></div>
+    <div class="box red"><h3>🛑 糟粕（极少）</h3>
+      <ul><li>基本无硬伤</li><li>警惕把"工作狂不是英雄"误读成"别努力"</li><li>整体反盲目扩张、反烧钱，价值观健康</li></ul></div>
+    <div class="box blue"><h3>🎯 对你(一人公司)</h3>
+      <ul><li>25+ mini-games 即"挠痒+小团队盈利"范本</li><li>新项目"做半个产品先上线"优于憋大招</li><li>早鸟/年费/定制预付款=客户融资</li><li>聚焦 AI小工具+知识库+简报三条线</li></ul></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="dot" style="background:var(--purple)"></span>跨库打通</h2>
+    <ul>
+      <li>与《24h百万生意模型》→ 都强调"先动起来"</li>
+      <li>与《屠龙资本原始积累》→ "客户/预收款融资"合规版</li>
+      <li>与《沃顿谈判课》→ 小团队协商/不等价交易互补</li>
+      <li>与《123亏钱案例》biz-avoid → 反盲目扩张、反烧钱</li>
+      <li>与《纳税隐形税》《交社保vs定投BTC》→ 「钱的隐秘规则」系列补"轻资产运营"</li>
+    </ul>
+  </div>
+
+  <footer>知识库四问卡 · 《重来》Rework · 2026-09-06</footer>
+</div>
+</body>
+</html>
