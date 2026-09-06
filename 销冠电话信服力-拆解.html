@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>为什么销冠打电话让人信服 · 拆解</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1f2329; --sub:#646a73; --line:#e5e6eb;
+    --red:#d9001b; --amber:#ff8f1f; --green:#00a870; --blue:#3370ff; --purple:#7b2ff7;
+    --soft-red:#fff1f0; --soft-amber:#fff7e8; --soft-green:#e8faf0; --soft-blue:#eef3ff; --soft-purple:#f4ecff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;padding:16px;max-width:720px;margin:0 auto}
+  .hero{background:linear-gradient(135deg,#0f766e,#3370ff);color:#fff;border-radius:18px;padding:22px 20px;margin-bottom:16px}
+  .hero h1{font-size:21px;font-weight:800;letter-spacing:1px}
+  .hero .meta{font-size:13px;opacity:.92;margin-top:8px}
+  .hero .oneline{background:rgba(255,255,255,.16);border-radius:12px;padding:10px 12px;margin-top:12px;font-size:14px;font-weight:600}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+  .card h2{font-size:16px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;color:#fff;flex:0 0 auto}
+  .t-red{background:var(--red)} .t-amber{background:var(--amber)} .t-green{background:var(--green)}
+  .t-blue{background:var(--blue)} .t-purple{background:var(--purple)} .t-teal{background:#0f766e}
+  .vs{display:flex;flex-direction:column;gap:10px;margin:4px 0 6px}
+  .role{border-radius:12px;padding:12px 14px}
+  .role .who{font-weight:800;font-size:14px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .role.new{background:var(--soft-red);border:1px solid #ffd6d3}
+  .role.new .who{color:var(--red)}
+  .role.top{background:var(--soft-green);border:1px solid #bfebd8}
+  .role.top .who{color:var(--green)}
+  .role p{font-size:13.5px}
+  .role .say{display:inline-block;background:#fff;border-radius:8px;padding:6px 10px;margin:4px 0;font-size:13.5px;border:1px solid var(--line)}
+  .result{font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:8px;display:inline-block;margin-top:4px}
+  .r-bad{background:#ffd6d3;color:#a50015}
+  .r-good{background:#bfebd8;color:#00694b}
+  .signal{display:flex;gap:12px;padding:11px 13px;background:var(--soft-blue);border-radius:12px;margin-bottom:9px;align-items:flex-start}
+  .signal .ic{flex:0 0 30px;height:30px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .signal b{color:var(--blue)}
+  .step{display:flex;gap:12px;padding:12px 14px;border-radius:12px;margin-bottom:9px;align-items:flex-start}
+  .step .num{flex:0 0 30px;height:30px;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+  .step.blue{background:var(--soft-blue)} .step.blue .num{background:var(--blue)}
+  .step.amber{background:var(--soft-amber)} .step.amber .num{background:var(--amber)}
+  .step.green{background:var(--soft-green)} .step.green .num{background:var(--green)}
+  .step b{display:block;margin-bottom:3px}
+  .qa{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .qa .q{font-weight:800;font-size:14px;color:var(--red);margin-bottom:6px}
+  .qa .a{font-size:13.5px}
+  .qa .a .pause{display:inline-block;background:var(--soft-amber);color:#9a5b00;font-weight:700;font-size:11px;border-radius:12px;padding:1px 8px;margin-right:4px}
+  .qa .a .hook{color:var(--blue);font-weight:700}
+  .warn{background:var(--soft-amber);border-left:4px solid var(--amber);border-radius:0 12px 12px 0;padding:12px 14px;font-size:13.5px;color:#7a4b00}
+  .quote{background:var(--soft-purple);border-radius:14px;padding:14px 16px;text-align:center;font-size:15px;font-weight:800;color:var(--purple);margin-top:4px}
+  .rel{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{font-size:12px;background:var(--soft-blue);color:var(--blue);padding:5px 11px;border-radius:20px;font-weight:600}
+  .cta{background:var(--soft-purple);border-radius:14px;padding:14px;text-align:center;font-size:13px;color:var(--purple);font-weight:600}
+  ul{margin:6px 0 0 18px;font-size:14px}
+  li{margin-bottom:6px}
+  .foot{text-align:center;font-size:11px;color:var(--sub);margin-top:18px}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>为什么销冠打电话让人信服</h1>
+  <div class="meta">抖音 · 郭靖（销售教练）· 149秒 · 个人成长 · #电话销售 #状态管理 #异议处理 #BD实战</div>
+  <div class="oneline">一句话：客户信的不是你说了什么，而是你说的时候稳不稳——稳不是天赋，是"见过、想过、准备过"堆出来的。</div>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-red">对照实验</span> 同一个价格质疑，两种结局</h2>
+  <p style="font-size:13.5px;color:var(--sub);margin-bottom:10px">客户抛出质疑："这个东西价格偏高，别家便宜不少呢？"——</p>
+  <div class="vs">
+    <div class="role new">
+      <div class="who">❌ 新人打法（心虚式）</div>
+      <p>立刻解释 → 语速变快、逻辑变乱、拼命证明"我们是值的"</p>
+      <span class="result r-bad">结局：客户"我再看看"，没下文</span>
+    </div>
+    <div class="role top">
+      <div class="who">✅ 销冠打法（停一秒式）</div>
+      <p>先停一秒，然后说：<br>
+      <span class="say">"说得对，价格确实比他们高一点。不过您更在意的是<b>价格</b>，还是后面<b>能不能省事</b>？"</span></p>
+      <span class="result r-good">结局：客户被截住，开始讲顾虑和踩过的坑 → 比价变咨询 → 单子自然成</span>
+    </div>
+  </div>
+  <div class="warn">关键不是那句话本身，是<b>停一秒</b>。停顿 = 不慌的证据；抢话 = 心虚的证据。</div>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-blue">原理</span> 电话里客户看不见你，只靠三件事判断</h2>
+  <div class="signal"><div class="ic">气</div><div><b>语气</b>——你一慌，声音先出卖你，客户立刻感觉到</div></div>
+  <div class="signal"><div class="ic">应</div><div><b>反应</b>——被质疑后多快开口？越急着证明自己，越像在心虚</div></div>
+  <div class="signal"><div class="ic">奏</div><div><b>节奏</b>——语速忽快忽慢 = 内心不稳；匀速 = 有底气</div></div>
+  <p style="font-size:13.5px;margin-top:8px"><b>销冠为什么不慌？</b>不是天生胆大，是脑子里早就见过这个场面——会被问的问题完全不陌生、难受的场景提前演练过。<b>稳是准备出来的，不是装出来的。</b></p>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-amber">方法</span> 三个笨办法（练出一开口就让人信服）</h2>
+  <div class="step blue"><div class="num">1</div><div><b>复盘卡壳瞬间</b>今天哪通电话被问住了、慌了？下次再问，打算怎么接？想清楚一次，下次就稳一次。别嫌麻烦。</div></div>
+  <div class="step amber"><div class="num">2</div><div><b>听自己的录音</b>不听录音以为很稳，一听才发现语速忽快忽慢、被问住就解释、停顿全是心虚——这是照见问题最快的方式。</div></div>
+  <div class="step green"><div class="num">3</div><div><b>提前预判问题</b>打电话前问自己："如果我是客户，我最想刁难他什么？"把问题提前备好，上场自然不怕。</div></div>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-teal">落地</span> 牛牛运动 BD：5 个必被问到的问题（停一秒版接法）</h2>
+  <p style="font-size:13px;color:var(--sub);margin-bottom:10px">配合《BD每日作战SOP·电话邀约版》使用。结构统一：<b>停一秒 → 先认可 → 抛选择题反问</b>。</p>
+  <div class="qa">
+    <div class="q">Q1 "你们和美团点评有什么区别？"</div>
+    <div class="a"><span class="pause">⏸ 停1秒</span>"说得对，点评流量确实大。不过您更在意的是<span class="hook">流量本身</span>，还是这些流量能不能<span class="hook">沉淀成您的回头客</span>？我们做的是后面这件事。"</div>
+  </div>
+  <div class="qa">
+    <div class="q">Q2 "10% 抽成太贵了"</div>
+    <div class="a"><span class="pause">⏸ 停1秒</span>"说得对，10% 不便宜。不过您更在意的是<span class="hook">抽成</span>，还是<span class="hook">周中空场的时间本来就在赔钱</span>？空场是 100% 的损失，抽成只抽成交的部分。"</div>
+  </div>
+  <div class="qa">
+    <div class="q">Q3 "我已经上过别的平台了，没效果"</div>
+    <div class="a"><span class="pause">⏸ 停1秒</span>"那确实，上过平台没效果最伤信心。您觉得上次没效果，卡在<span class="hook">没流量</span>，还是<span class="hook">来了留不住</span>？这两个是不同的问题，我们对症聊。"</div>
+  </div>
+  <div class="qa">
+    <div class="q">Q4 "你先发个资料我看看"</div>
+    <div class="a"><span class="pause">⏸ 停1秒</span>"可以，资料我肯定发。不过资料是通用的，每家馆情况不一样——您馆里现在<span class="hook">最头疼的是周中空场还是新客不够</span>？我按您的具体情况标重点，比干看资料有用。"</div>
+  </div>
+  <div class="qa">
+    <div class="q">Q5 "我再考虑考虑"</div>
+    <div class="a"><span class="pause">⏸ 停1秒</span>"应该的，这事值得考虑。就问一句：您主要在犹豫<span class="hook">效果</span>，还是<span class="hook">合作方式</span>？前者我给您看我们刚办完的赛事数据（160人/300+人次进店），后者我 10 分钟给您讲清楚。"</div>
+  </div>
+  <div class="warn"><b>每天开打前 5 分钟</b>：把这 5 个问题过一遍再拨号。<b>每天收工后 5 分钟</b>：记下今天被问住的新问题，写出接法，明早补进清单——半年攒出一套牛牛运动自己的异议题库。</div>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-green">用法</span> 三个笨办法 × 你的现有工具</h2>
+  <ul>
+    <li><b>飞书跟进表加一个字段</b>：【今日被问住的问题】——卡壳一次录一条，当天写出接法</li>
+    <li><b>重要电话开录音</b>（对方知情合规），晚上回听 2 分钟，专听语速和停顿</li>
+    <li><b>bd-route 圈好片区后</b>，打电话前先预判这家主理人最可能刁难什么（新馆问效果、老馆问抽成、连锁问规模）</li>
+  </ul>
+  <div class="rel" style="margin-top:12px">
+    <span class="chip">BD每日作战SOP·电话邀约版</span>
+    <span class="chip">六角沟通法·博弈模块</span>
+    <span class="chip">察言观色·SPIN暗示性反问</span>
+    <span class="chip">怂怂诺诺·不心虚</span>
+  </div>
+</div>
+
+<div class="card">
+  <h2><span class="tag t-purple">收尾</span> 送你的那句话</h2>
+  <div class="quote">客户信的不是你有多会说，<br>而是你看起来有没有底。<br>见过、想过、准备过——状态自然稳。<br>你稳了，客户才敢把这个事交给你。<br><span style="font-size:12.5px;font-weight:600">这不靠天赋，是下功夫的事。</span></div>
+</div>
+
+<div class="cta">📥 完整四问卡已入知识库：categories/个人成长/2026-09-06-销冠电话信服力.md<br>（四端同步：本地Obsidian · GitHub · kb.html · 腾讯文档）</div>
+
+<div class="foot">由 video-distill 一键流水线生成 · 2026-09-06</div>
+
+</body>
+</html>
